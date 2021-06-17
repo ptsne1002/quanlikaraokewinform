@@ -1,0 +1,9 @@
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\DTO\bin\Debug\netstandard2.0\DTO.deps.json
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\DTO\bin\Debug\netstandard2.0\DTO.dll
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\DTO\bin\Debug\netstandard2.0\DTO.pdb
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\DTO\obj\Debug\netstandard2.0\DTO.csprojAssemblyReference.cache
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\DTO\obj\Debug\netstandard2.0\DTO.AssemblyInfoInputs.cache
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\DTO\obj\Debug\netstandard2.0\DTO.AssemblyInfo.cs
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\DTO\obj\Debug\netstandard2.0\DTO.csproj.CoreCompileInputs.cache
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\DTO\obj\Debug\netstandard2.0\DTO.dll
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\DTO\obj\Debug\netstandard2.0\DTO.pdb
