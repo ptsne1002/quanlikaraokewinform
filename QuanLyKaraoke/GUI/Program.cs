@@ -16,7 +16,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fmLogin());
+            Application.Run(new fmMain(new DTO.Employee()));
         }
     }
 }

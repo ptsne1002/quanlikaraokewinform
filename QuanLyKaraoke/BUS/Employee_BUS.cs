@@ -14,5 +14,12 @@ namespace BUS
             Employee temp = this.model.GetEmployee(id);
             return temp;
         }
+
+        public List<Employee> GetAllEmp()
+        {
+            List<Employee> temp = new List<Employee>();
+            temp = model.GetAllEmp();
+            return temp;
+        }
     }
 }
