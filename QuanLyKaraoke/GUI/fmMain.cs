@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,8 @@ namespace GUI
         private Employee currentEmp = new Employee();
         private Room_BUS controllerRoom = new Room_BUS();
         private Employee_BUS controllerEmp = new Employee_BUS();
+        private Account_BUS controllerAcc = new Account_BUS();
+
         public fmMain(Employee e)
         {
             currentEmp = e;
@@ -89,7 +92,15 @@ namespace GUI
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
+            Account currentAcc = new Account();
+            currentAcc = controllerAcc.GetAccountByIdEmp(currentEmp.EmployeeId);
+            fmAccount formAccount = new fmAccount(currentAcc,currentEmp);
+            formAccount.ShowDialog();
+        }
 
+        private void OpenAccount()
+        {
+            
         }
 
         private void btnInvoice_Click(object sender, EventArgs e)
@@ -117,6 +128,9 @@ namespace GUI
 
         }
 
-        
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://www.facebook.com/pts1002");
+        }
     }
 }

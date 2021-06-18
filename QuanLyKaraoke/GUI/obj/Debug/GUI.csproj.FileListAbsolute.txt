@@ -103,3 +103,4 @@ E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\bin\Deb
 E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
 E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Debug\GUI.exe.licenses
 E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Debug\GUI.fmMain.resources
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Debug\GUI.fmAccount.resources

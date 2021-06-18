@@ -13,5 +13,19 @@ namespace BUS
             return employeeid;
         }
 
+        public Account GetAccountByIdEmp(int EmpId)
+        {
+            Account temp = new Account();
+            temp = model.GetAccountByIdEmp(EmpId);
+
+            return temp;
+
+        }
+
+        public string ChangePwd(Account temp)
+        {
+            string rs = model.ChangePwd(temp);
+            return rs;
+        }
     }
 }

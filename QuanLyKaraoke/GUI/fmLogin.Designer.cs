@@ -84,7 +84,7 @@ namespace GUI
             this.txtUserName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUserName.DefaultFont = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.DefaultText = "";
+            this.txtUserName.DefaultText = "pts";
             this.txtUserName.FillColor = System.Drawing.Color.White;
             this.txtUserName.HideSelection = true;
             this.txtUserName.IconLeft = global::GUI.Properties.Resources.user;
@@ -92,7 +92,8 @@ namespace GUI
             this.txtUserName.IconPadding = 10;
             this.txtUserName.IconRight = null;
             this.txtUserName.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUserName.Lines = new string[0];
+            this.txtUserName.Lines = new string[] {
+        "pts"};
             this.txtUserName.Location = new System.Drawing.Point(253, 117);
             this.txtUserName.MaxLength = 32767;
             this.txtUserName.MinimumSize = new System.Drawing.Size(1, 1);
@@ -127,7 +128,7 @@ namespace GUI
             this.txtUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtUserName.SelectedText = "";
             this.txtUserName.SelectionLength = 0;
-            this.txtUserName.SelectionStart = 0;
+            this.txtUserName.SelectionStart = 3;
             this.txtUserName.ShortcutsEnabled = true;
             this.txtUserName.Size = new System.Drawing.Size(260, 44);
             this.txtUserName.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
@@ -263,7 +264,7 @@ namespace GUI
             this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultFont = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.DefaultText = "";
+            this.txtPassword.DefaultText = "pts";
             this.txtPassword.FillColor = System.Drawing.Color.White;
             this.txtPassword.HideSelection = true;
             this.txtPassword.IconLeft = global::GUI.Properties.Resources.key;
@@ -271,7 +272,8 @@ namespace GUI
             this.txtPassword.IconPadding = 10;
             this.txtPassword.IconRight = null;
             this.txtPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.Lines = new string[0];
+            this.txtPassword.Lines = new string[] {
+        "pts"};
             this.txtPassword.Location = new System.Drawing.Point(253, 183);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.MinimumSize = new System.Drawing.Size(1, 1);
@@ -306,7 +308,7 @@ namespace GUI
             this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
-            this.txtPassword.SelectionStart = 0;
+            this.txtPassword.SelectionStart = 3;
             this.txtPassword.ShortcutsEnabled = true;
             this.txtPassword.Size = new System.Drawing.Size(260, 44);
             this.txtPassword.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
