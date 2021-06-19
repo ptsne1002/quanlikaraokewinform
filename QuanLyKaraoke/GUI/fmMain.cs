@@ -34,12 +34,12 @@ namespace GUI
         private void LoadDBEmployee()
         {
             List<Employee> listEmp = new List<Employee>();
-            listEmp = controllerEmp.GetAllEmp();
+            listEmp = controllerEmp.GetAllEmpServe();
             tblEmp.Rows.Clear();
             for (int i = 0; i < listEmp.Count; i++)
             {
                 DataGridViewRow newRow = new DataGridViewRow();
-                newRow.CreateCells(tblRoom);
+                newRow.CreateCells(tblEmp);
                 newRow.Cells[0].Value = listEmp[i].EmployeeId;
                 newRow.Cells[1].Value = listEmp[i].EmployeeName;
                 newRow.Cells[2].Value = listEmp[i].Role;
@@ -115,7 +115,8 @@ namespace GUI
 
         private void btnEmp_Click(object sender, EventArgs e)
         {
-
+            fmEmp fmEmp = new fmEmp();
+            fmEmp.ShowDialog();
         }
 
         private void btnRoom_Click(object sender, EventArgs e)
