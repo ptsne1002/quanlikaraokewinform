@@ -203,6 +203,12 @@
     <Compile Include="fmAccount.Designer.cs">
       <DependentUpon>fmAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmCustomer.Designer.cs">
+      <DependentUpon>fmCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="fmEmp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fmAccount.resx">
       <DependentUpon>fmAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmCustomer.resx">
+      <DependentUpon>fmCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmEmp.resx">
       <DependentUpon>fmEmp.cs</DependentUpon>

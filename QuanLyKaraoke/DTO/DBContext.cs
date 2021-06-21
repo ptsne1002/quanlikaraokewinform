@@ -11,7 +11,7 @@ namespace DTO
     {
         private ConnectDB Connect = new ConnectDB();
 
-        // Process Account into DB
+        // Process Account with DB
         public int CheckAccount(Account n)
         {
             int employeeid = -1;
@@ -102,7 +102,7 @@ namespace DTO
             return rs;
         }
 
-        // Process Employee into DB
+        // Process Employee with DB
         public Employee GetEmployee(int id)
         {
             Employee temp = new Employee();
@@ -287,7 +287,7 @@ namespace DTO
             return rs;
         }
 
-        // Process Room into DB
+        // Process Room with DB
 
         public List<Room> GetAllRoom()
         {
@@ -321,9 +321,120 @@ namespace DTO
         }
 
 
+        // Process Customer with DB
 
+        public List<Customer> GetAllCustomer()
+        {
+            List<Customer> temp = new List<Customer>();
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = "select * from customer order by customerid ASC";
+            OracleCommand cmd = new OracleCommand(query, conn);
+            OracleDataReader rd;
+            try
+            {
+                conn.Open();
+                rd = cmd.ExecuteReader();
 
+                if (rd.HasRows)
+                    while (rd.Read())
+                    {
+                        Customer t = new Customer();
+                        t.CustomerId = rd.GetInt32(0);
+                        t.CustomerName = rd.GetString(1);
+                        t.Phone = rd.GetString(2);
+                        temp.Add(t);
+                    }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
 
+            }
+            return temp;
+        }
+
+        public string InsertCus(Customer cus)
+        {
+            string rs = "";
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("insert into customer(name, phone) values ('{0}','{1}')",
+                                          cus.CustomerName, cus.Phone);
+            OracleCommand cmd = new OracleCommand(query, conn);
+            try
+            {
+                conn.Open();
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    rs = "Successful";
+                }
+                else
+                {
+                    rs = "Sorry! Can't Add New Customer";
+                }
+            }
+            catch (Exception e)
+            {
+                rs = e.Message;
+            }
+            return rs;
+        }
+
+        public string EditCus(Customer cus)
+        {
+            string rs = "";
+            OracleConnection conn = Connect.ConnecttoDB();
+            conn.Open();
+            OracleTransaction transaction;
+            transaction = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+            string query = string.Format("UPDATE customer SET name = '{0}', phone = '{1}' WHERE customerid = {2}",
+                                          cus.CustomerName, cus.Phone, cus.CustomerId);
+            OracleCommand cmd = conn.CreateCommand();
+            cmd.Transaction = transaction;
+
+            try
+            {
+                cmd.CommandText = query;
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    rs = "Successful";
+                    transaction.Commit();
+                }
+                else
+                {
+                    rs = "Sorry! Can't Edit Customer";
+                }
+            }
+            catch (Exception e)
+            {
+                rs = e.Message;
+            }
+            return rs;
+        }
+
+        public string DeleteCus(int id)
+        {
+            string rs = "";
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("DELETE FROM customer WHERE customerid = {0}", id);
+            OracleCommand cmd = new OracleCommand(query, conn);
+            try
+            {
+                conn.Open();
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    rs = "Successful";
+                }
+                else
+                {
+                    rs = "Sorry! Can't Delete Customer";
+                }
+            }
+            catch (Exception e)
+            {
+                rs = e.Message;
+            }
+            return rs;
+        }
     }
 
 

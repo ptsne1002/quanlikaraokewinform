@@ -107,3 +107,4 @@ E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Deb
 E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Debug\GUI.fmEmp.resources
 E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\bin\Debug\Oracle.ManagedDataAccess.dll
 E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Debug\GUI.fmRoom.resources
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Debug\GUI.fmCustomer.resources

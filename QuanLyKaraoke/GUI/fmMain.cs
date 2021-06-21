@@ -128,7 +128,8 @@ namespace GUI
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-
+            fmCustomer fmCus = new fmCustomer();
+            fmCus.ShowDialog();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

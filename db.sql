@@ -67,3 +67,122 @@ select * from employee order by employeeid ASC;
 
 insert into service(servicename ,price) values ('bò húc',12000);
 insert into service(servicename ,price) values ('trái cây',50000);
+
+/* trigger for db */
+
+create or replace trigger insert_stt_for_room
+before insert on room
+for each row
+begin 
+    :new.status := 'Already' ;
+end;
+
+create or replace trigger set_price_for_room
+before insert or update on room
+for each row
+begin 
+    if :new.type = 'Normal' then
+        :new.priceperhour := 150000;
+    ELSIF :new.type = 'Vip' then
+        :new.priceperhour := 200000;
+    end if;
+end;
+
+select * from room;
+
+insert into room(roomname, type) values('A1.5','Normal');
+insert into room(roomname, type) values('A1.6','Vip');
+
+create table customer(
+    customerid number GENERATED ALWAYS AS IDENTITY primary key,
+    name nvarchar2(100),
+    phone varchar2(11));
+
+create table invoice(
+    orderid number GENERATED ALWAYS AS IDENTITY primary key,
+    bookingid number,
+    timeend date,
+    totalprice number,
+    createdby number,
+    foreign key(createdby) references employee(employeeid),
+    foreign key(bookingid) references booking(bookingid));
+
+--drop table orders;
+select * from orders;
+
+create table booking(
+    bookingid number GENERATED ALWAYS AS IDENTITY primary key,
+    roomid number,
+    empid number,
+    customerid number,
+    timecreated date,
+    status nvarchar2(40),
+    foreign key(empid) references employee(employeeid),
+    foreign key(roomid) references room(roomid),
+    foreign key(customerid) references customer(customerid)
+)
+
+create or replace trigger set_stt_for_booking
+before insert on invoice
+for each row
+begin
+    update booking
+    set status = 'Done'
+    where bookingid = :new.bookingid;
+end;
+
+create or replace trigger change_stt_room
+before insert on booking
+for each row
+begin
+    :new.status := 'Using';
+    update room
+    set status = 'Busy'
+    where roomid = :new.roomid;
+end;
+
+create or replace trigger change_stt_room2
+before update on booking
+for each row
+begin
+    if :new.status ='Done' then
+        update room
+        set status = 'Already'
+        where roomid = :new.roomid;
+    end if;
+end;
+
+--set serveroutput on;
+--
+--declare 
+--    now date;
+--begin
+--    now := to_date(SYSTIMESTAMP,'DD-MM-YYYY MI:HH');
+--    DBMS_OUTPUT.PUT_LINE(now);
+--end;
+
+insert into customer(name,phone) values('Pham tien sy','012399');
+
+select * from room;
+
+insert into booking(roomid, empid,customerid) values('1','1','1');
+
+insert into invoice(bookingid) values(1);
+
+update room
+set status = 'Already'
+where type = 'Normal';
+commit;
+insert into room(roomname, type) values('A1.7','Vip');
+select * from room;
+
+select * from customer order by customerid ASC
+
+
+
+
+
+
+
+
+
