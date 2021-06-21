@@ -93,7 +93,9 @@ namespace GUI
         private void btnAccount_Click(object sender, EventArgs e)
         {
             Account currentAcc = new Account();
-            currentAcc = controllerAcc.GetAccountByIdEmp(currentEmp.EmployeeId);
+           // MessageBox.Show(currentEmp.EmployeeId.ToString(), "ss");
+            currentAcc = controllerAcc.GetAccountByIdEmp(1);
+           // MessageBox.Show(currentAcc.EmployeeId.ToString(), "ss");
             fmAccount formAccount = new fmAccount(currentAcc,currentEmp);
             formAccount.ShowDialog();
         }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iWHKieqcIlmYsPu2VSIqOoZN9z/S4jubiAyOV8FUR4cTliG/5y2ge20F3GS3iW5jOvVUb/uDC27UJzVCdVGgvA==",
+  "dgSpecHash": "AXDdQlUU5I9JYISqpWo/4JvPEgaATHA4gHdyxvsInq8bSlPZAadA1q5p3wYzE6yQmaJkkg0Vk1R97mB7samHCQ==",
   "success": true,
   "projectFilePath": "E:\\Phân Tích Thiết Kế HTTT\\QuanLyKaraoke-Project\\QuanLyKaraoke\\DTO\\DTO.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\Pts\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Pts\\.nuget\\packages\\mysql.data\\8.0.25\\mysql.data.8.0.25.nupkg.sha512",
     "C:\\Users\\Pts\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Pts\\.nuget\\packages\\oracle.manageddataaccess\\19.11.0\\oracle.manageddataaccess.19.11.0.nupkg.sha512",
     "C:\\Users\\Pts\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Pts\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.1\\system.configuration.configurationmanager.4.4.1.nupkg.sha512",
     "C:\\Users\\Pts\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
@@ -23,5 +24,16 @@
     "C:\\Users\\Pts\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\Pts\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Oracle.ManagedDataAccess 19.11.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Oracle.ManagedDataAccess",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

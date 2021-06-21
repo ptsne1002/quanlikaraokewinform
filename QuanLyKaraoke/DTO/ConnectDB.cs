@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,11 +8,10 @@ namespace DTO
 {
     public class ConnectDB
     {
-        private string str_connect = "datasource=localhost;port=3306;username=root;password=;database=db_quanlykaraoke;";
-        
-        public MySqlConnection ConnecttoDB()
+        private string str_connect = "Data Source=localhost:1521/orcl;User Id=karaokemanager;Password=pts;";
+        public OracleConnection ConnecttoDB()
         {
-            MySqlConnection conn = new MySqlConnection(this.str_connect);
+            OracleConnection conn = new OracleConnection(this.str_connect);
             return conn;
         }
     }

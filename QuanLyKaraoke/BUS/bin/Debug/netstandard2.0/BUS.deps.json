@@ -11,7 +11,8 @@
         "dependencies": {
           "DTO": "1.0.0",
           "MySql.Data": "8.0.25",
-          "NETStandard.Library": "2.0.3"
+          "NETStandard.Library": "2.0.3",
+          "Oracle.ManagedDataAccess": "19.11.0"
         },
         "runtime": {
           "BUS.dll": {}
@@ -102,6 +103,14 @@
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Oracle.ManagedDataAccess/19.11.0": {
+        "runtime": {
+          "lib/net40/Oracle.ManagedDataAccess.dll": {
+            "assemblyVersion": "4.122.19.1",
+            "fileVersion": "4.122.19.1"
+          }
         }
       },
       "System.Buffers/4.5.1": {
@@ -200,7 +209,8 @@
       },
       "DTO/1.0.0": {
         "dependencies": {
-          "MySql.Data": "8.0.25"
+          "MySql.Data": "8.0.25",
+          "Oracle.ManagedDataAccess": "19.11.0"
         },
         "runtime": {
           "DTO.dll": {}
@@ -269,6 +279,13 @@
       "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Oracle.ManagedDataAccess/19.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-E1d+kp34TAS5BVM1vmPGc+jc+psG5gc+JkP6GmHVB26HUfOdKxz/8axsLMl63h2uxe2IQzVXWWXt823pM+15oQ==",
+      "path": "oracle.manageddataaccess/19.11.0",
+      "hashPath": "oracle.manageddataaccess.19.11.0.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",

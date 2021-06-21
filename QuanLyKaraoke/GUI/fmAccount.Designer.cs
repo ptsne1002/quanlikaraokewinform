@@ -436,6 +436,7 @@ namespace GUI
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fmAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmAccount";
             this.ResumeLayout(false);
             this.PerformLayout();

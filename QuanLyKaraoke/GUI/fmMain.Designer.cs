@@ -315,6 +315,7 @@ namespace GUI
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.tblEmp);
+            this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Azure;
             this.groupBox4.Location = new System.Drawing.Point(773, 39);
             this.groupBox4.Name = "groupBox4";
@@ -338,13 +339,13 @@ namespace GUI
             this.dataGridViewTextBoxColumn3});
             this.tblEmp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblEmp.GridColor = System.Drawing.Color.CadetBlue;
-            this.tblEmp.Location = new System.Drawing.Point(3, 23);
+            this.tblEmp.Location = new System.Drawing.Point(3, 19);
             this.tblEmp.Name = "tblEmp";
             this.tblEmp.ReadOnly = true;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             this.tblEmp.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.tblEmp.Size = new System.Drawing.Size(493, 313);
+            this.tblEmp.Size = new System.Drawing.Size(493, 317);
             this.tblEmp.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -371,6 +372,7 @@ namespace GUI
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.tblRoom);
+            this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.Azure;
             this.groupBox3.Location = new System.Drawing.Point(355, 39);
             this.groupBox3.Name = "groupBox3";
@@ -394,13 +396,13 @@ namespace GUI
             this.RoomType});
             this.tblRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblRoom.GridColor = System.Drawing.Color.CadetBlue;
-            this.tblRoom.Location = new System.Drawing.Point(3, 23);
+            this.tblRoom.Location = new System.Drawing.Point(3, 19);
             this.tblRoom.Name = "tblRoom";
             this.tblRoom.ReadOnly = true;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.tblRoom.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.tblRoom.Size = new System.Drawing.Size(406, 313);
+            this.tblRoom.Size = new System.Drawing.Size(406, 317);
             this.tblRoom.TabIndex = 0;
             // 
             // Id

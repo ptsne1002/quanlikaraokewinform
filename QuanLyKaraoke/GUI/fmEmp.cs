@@ -55,7 +55,7 @@ namespace GUI
             newEmp.EmployeeName = txtName.Text;
             newEmp.Role = cbRole.SelectedItem.ToString();
             newEmp.Gender = cbGender.SelectedItem.ToString();
-            newEmp.BirthDay = DateTime.Parse(dateBD.Value.ToShortDateString()).ToString("yyyy-MM-dd");
+            newEmp.BirthDay = DateTime.Parse(dateBD.Value.ToShortDateString()).ToString("dd-MM-yyyy");
             newEmp.Salary = Int32.Parse(numSalary.Value.ToString());
             newEmp.Phone = txtPhone.Text;
             newEmp.Address = txtAdr.Text;
@@ -118,7 +118,7 @@ namespace GUI
             newEmp.EmployeeName = txtName.Text;
             newEmp.Role = cbRole.SelectedItem.ToString();
             newEmp.Gender = cbGender.SelectedItem.ToString();
-            newEmp.BirthDay = DateTime.Parse(dateBD.Value.ToShortDateString()).ToString("yyyy-MM-dd");
+            newEmp.BirthDay = DateTime.Parse(dateBD.Value.ToShortDateString()).ToString("dd/MM/yyyy");
             newEmp.Salary = Int32.Parse(numSalary.Value.ToString());
             newEmp.Phone = txtPhone.Text;
             newEmp.Address = txtAdr.Text;

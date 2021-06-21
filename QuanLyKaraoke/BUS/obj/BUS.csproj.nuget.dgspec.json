@@ -53,6 +53,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Oracle.ManagedDataAccess": {
+              "target": "Package",
+              "version": "[19.11.0, )"
             }
           },
           "imports": [
@@ -114,6 +118,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Oracle.ManagedDataAccess": {
+              "target": "Package",
+              "version": "[19.11.0, )"
             }
           },
           "imports": [

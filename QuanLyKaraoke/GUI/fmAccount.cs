@@ -32,6 +32,7 @@ namespace GUI
             {
                 if(txtRetypePwd.Text == txtNewPwd.Text)
                 {
+                    currentAcc.Password = txtNewPwd.Text;
                     string rs = controllerAcc.ChangePwd(currentAcc);
                     MessageBox.Show(rs, "Notification");
                     txtNewPwd.Text = txtOldPwd.Text = txtRetypePwd.Text = "";
@@ -42,6 +43,7 @@ namespace GUI
             }
             else
             {
+                
                 MessageBox.Show("Old Password Isn't Correct!", "Notification");
             }
         }
