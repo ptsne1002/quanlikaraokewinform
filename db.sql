@@ -173,11 +173,12 @@ update room
 set status = 'Already'
 where type = 'Normal';
 commit;
-insert into room(roomname, type) values('A1.7','Vip');
+insert into room(roomname, type) values('A1.8','Vip');
 select * from room;
 
-select * from customer order by customerid ASC
+select * from customer order by customerid ASC;
 
+select * from room order by roomid ASC
 
 
 

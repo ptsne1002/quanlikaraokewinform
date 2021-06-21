@@ -307,8 +307,9 @@ namespace DTO
                         Room t = new Room();
                         t.RoomId = rd.GetInt32(0);
                         t.RoomName = rd.GetString(1);
-                        t.Title = rd.GetString(2);
+                        t.Type = rd.GetString(2);
                         t.PricePerHours = rd.GetInt32(3);
+                        t.Status = rd.GetString(4);
                         temp.Add(t);
                     }
                 conn.Close();
@@ -320,6 +321,88 @@ namespace DTO
             return temp;
         }
 
+        public string InsertRoom(Room r)
+        {
+            string rs = "";
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("insert into room(roomname, type) values ('{0}','{1}')",
+                                          r.RoomName, r.Type);
+            OracleCommand cmd = new OracleCommand(query, conn);
+            try
+            {
+                conn.Open();
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    rs = "Successful";
+                }
+                else
+                {
+                    rs = "Sorry! Can't Add New Room";
+                }
+            }
+            catch (Exception e)
+            {
+                rs = e.Message;
+            }
+            return rs;
+        }
+
+        public string EdiRoom(Room r)
+        {
+            string rs = "";
+            OracleConnection conn = Connect.ConnecttoDB();
+            conn.Open();
+            OracleTransaction transaction;
+            transaction = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+            string query = string.Format("UPDATE room SET roomname = '{0}', type = '{1}' WHERE roomid = {2}",
+                                          r.RoomName, r.Type, r.RoomId);
+            OracleCommand cmd = conn.CreateCommand();
+            cmd.Transaction = transaction;
+
+            try
+            {
+                cmd.CommandText = query;
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    rs = "Successful";
+                    transaction.Commit();
+                }
+                else
+                {
+                    rs = "Sorry! Can't Edit Room";
+                }
+            }
+            catch (Exception e)
+            {
+                rs = e.Message;
+            }
+            return rs;
+        }
+
+        public string DeleteRoom(int id)
+        {
+            string rs = "";
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("DELETE FROM room WHERE roomid = {0}", id);
+            OracleCommand cmd = new OracleCommand(query, conn);
+            try
+            {
+                conn.Open();
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    rs = "Successful";
+                }
+                else
+                {
+                    rs = "Sorry! Can't Delete Room";
+                }
+            }
+            catch (Exception e)
+            {
+                rs = e.Message;
+            }
+            return rs;
+        }
 
         // Process Customer with DB
 

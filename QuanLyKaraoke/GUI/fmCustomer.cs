@@ -52,7 +52,7 @@ namespace GUI
             Customer newCus = new Customer();
             newCus.CustomerName = txtName.Text;
             newCus.Phone = txtPhone.Text;
-            DialogResult confimDialog = MessageBox.Show("Are You Sure Want To Add new This Employee?", "Notification", MessageBoxButtons.YesNo);
+            DialogResult confimDialog = MessageBox.Show("Are You Sure Want To Add new This Customer?", "Notification", MessageBoxButtons.YesNo);
             if (confimDialog == DialogResult.Yes)
             {
                 string rs = controllerCus.InsertCus(newCus);
@@ -84,7 +84,7 @@ namespace GUI
             {
                 int index = tblCustomer.CurrentCell.RowIndex;
                 Customer del = listCus[index];
-                DialogResult confimDialog = MessageBox.Show("Are You Sure Want To Delete This Employee?", "Warning", MessageBoxButtons.YesNo);
+                DialogResult confimDialog = MessageBox.Show("Are You Sure Want To Delete This Customer?", "Warning", MessageBoxButtons.YesNo);
                 if (confimDialog == DialogResult.Yes)
                 {
                     string rs = controllerCus.DeleteCus(del.CustomerId);
@@ -95,7 +95,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("You Must Choice One Employee","Notification");
+                MessageBox.Show("You Must Choice One Customer","Notification");
             }
         }
 
@@ -106,7 +106,7 @@ namespace GUI
             newCus.CustomerId = listCus[index].CustomerId;
             newCus.CustomerName = txtName.Text;
             newCus.Phone = txtPhone.Text;
-            DialogResult confimDialog = MessageBox.Show("Are You Sure Want To Edit This Employee?", "Notification", MessageBoxButtons.YesNo);
+            DialogResult confimDialog = MessageBox.Show("Are You Sure Want To Edit This Customer?", "Notification", MessageBoxButtons.YesNo);
             if (confimDialog == DialogResult.Yes)
             {
                 string rs = controllerCus.EditCus(newCus);

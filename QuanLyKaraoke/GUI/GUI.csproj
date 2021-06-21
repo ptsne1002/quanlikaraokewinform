@@ -203,6 +203,12 @@
     <Compile Include="fmAccount.Designer.cs">
       <DependentUpon>fmAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmRoom.Designer.cs">
+      <DependentUpon>fmRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="fmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,16 +233,19 @@
     <Compile Include="fmMain.Designer.cs">
       <DependentUpon>fmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="fmRoom.cs">
+    <Compile Include="fmService.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fmRoom.Designer.cs">
-      <DependentUpon>fmRoom.cs</DependentUpon>
+    <Compile Include="fmService.Designer.cs">
+      <DependentUpon>fmService.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fmAccount.resx">
       <DependentUpon>fmAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmRoom.resx">
+      <DependentUpon>fmRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmCustomer.resx">
       <DependentUpon>fmCustomer.cs</DependentUpon>
@@ -249,9 +258,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fmMain.resx">
       <DependentUpon>fmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fmRoom.resx">
-      <DependentUpon>fmRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -323,6 +329,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

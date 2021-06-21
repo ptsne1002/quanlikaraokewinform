@@ -20,6 +20,7 @@ namespace GUI
         private Room_BUS controllerRoom = new Room_BUS();
         private Employee_BUS controllerEmp = new Employee_BUS();
         private Account_BUS controllerAcc = new Account_BUS();
+        private Customer_BUS controllerCus = new Customer_BUS();
 
         public fmMain(Employee e)
         {
@@ -58,7 +59,8 @@ namespace GUI
                 newRow.CreateCells(tblRoom);
                 newRow.Cells[0].Value = listRoom[i].RoomId;
                 newRow.Cells[1].Value = listRoom[i].RoomName;
-                newRow.Cells[2].Value = listRoom[i].Title;
+                newRow.Cells[2].Value = listRoom[i].Type;
+                newRow.Cells[3].Value = listRoom[i].Status;
                 tblRoom.Rows.Add(newRow);
             }
         }
@@ -123,7 +125,8 @@ namespace GUI
 
         private void btnRoom_Click(object sender, EventArgs e)
         {
-
+            fmRoom fmRoom = new fmRoom();
+            fmRoom.ShowDialog();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
@@ -135,6 +138,35 @@ namespace GUI
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://www.facebook.com/pts1002");
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            Customer newCus = new Customer();
+            newCus.CustomerName = txtName.Text;
+            newCus.Phone = txtPhone.Text;
+            DialogResult confimDialog = MessageBox.Show("Are You Sure Want To Add new This Customer?", "Notification", MessageBoxButtons.YesNo);
+            if (confimDialog == DialogResult.Yes)
+            {
+                string rs = controllerCus.InsertCus(newCus);
+                MessageBox.Show(rs, "Notification");
+                txtPhone.Text = txtName.Text = "";
+                LoadDBCustomer();
+            }
+        }
+        private void LoadDBCustomer()
+        {
+            tblCustomer.Rows.Clear();
+            List<Cú>
+            listCus = controllerCus.GetAllCustomer();
+            for (int i = 0; i < listCus.Count; i++)
+            {
+                DataGridViewRow newRow = new DataGridViewRow();
+                newRow.CreateCells(tblCustomer);
+                newRow.Cells[0].Value = this.listCus[i].CustomerName;
+                newRow.Cells[1].Value = this.listCus[i].Phone;
+                tblCustomer.Rows.Add(newRow);
+            }
         }
     }
 }
