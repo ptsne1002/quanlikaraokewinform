@@ -29,6 +29,7 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmEmp));
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -42,9 +43,10 @@ namespace GUI
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmEmp));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEditEmp = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnDeleteEmp = new Bunifu.Framework.UI.BunifuThinButton2();
             this.txtAdr = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnAdd = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -70,8 +72,6 @@ namespace GUI
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpBirthDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDeleteEmp = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnEditEmp = new Bunifu.Framework.UI.BunifuThinButton2();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSalary)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -118,6 +118,58 @@ namespace GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Information";
             // 
+            // btnEditEmp
+            // 
+            this.btnEditEmp.ActiveBorderThickness = 1;
+            this.btnEditEmp.ActiveCornerRadius = 20;
+            this.btnEditEmp.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnEditEmp.ActiveForecolor = System.Drawing.Color.White;
+            this.btnEditEmp.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnEditEmp.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnEditEmp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditEmp.BackgroundImage")));
+            this.btnEditEmp.ButtonText = "Edit Employee";
+            this.btnEditEmp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditEmp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditEmp.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnEditEmp.IdleBorderThickness = 1;
+            this.btnEditEmp.IdleCornerRadius = 20;
+            this.btnEditEmp.IdleFillColor = System.Drawing.Color.White;
+            this.btnEditEmp.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btnEditEmp.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnEditEmp.Location = new System.Drawing.Point(440, 181);
+            this.btnEditEmp.Margin = new System.Windows.Forms.Padding(5);
+            this.btnEditEmp.Name = "btnEditEmp";
+            this.btnEditEmp.Size = new System.Drawing.Size(181, 54);
+            this.btnEditEmp.TabIndex = 20;
+            this.btnEditEmp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnEditEmp.Click += new System.EventHandler(this.btnEditEmp_Click);
+            // 
+            // btnDeleteEmp
+            // 
+            this.btnDeleteEmp.ActiveBorderThickness = 1;
+            this.btnDeleteEmp.ActiveCornerRadius = 20;
+            this.btnDeleteEmp.ActiveFillColor = System.Drawing.Color.Crimson;
+            this.btnDeleteEmp.ActiveForecolor = System.Drawing.Color.White;
+            this.btnDeleteEmp.ActiveLineColor = System.Drawing.Color.Crimson;
+            this.btnDeleteEmp.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnDeleteEmp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteEmp.BackgroundImage")));
+            this.btnDeleteEmp.ButtonText = "Delete Employee";
+            this.btnDeleteEmp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteEmp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteEmp.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnDeleteEmp.IdleBorderThickness = 1;
+            this.btnDeleteEmp.IdleCornerRadius = 20;
+            this.btnDeleteEmp.IdleFillColor = System.Drawing.Color.White;
+            this.btnDeleteEmp.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btnDeleteEmp.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnDeleteEmp.Location = new System.Drawing.Point(710, 181);
+            this.btnDeleteEmp.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDeleteEmp.Name = "btnDeleteEmp";
+            this.btnDeleteEmp.Size = new System.Drawing.Size(181, 54);
+            this.btnDeleteEmp.TabIndex = 19;
+            this.btnDeleteEmp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDeleteEmp.Click += new System.EventHandler(this.bunifuThinButton21_Click);
+            // 
             // txtAdr
             // 
             this.txtAdr.AcceptsReturn = false;
@@ -135,7 +187,7 @@ namespace GUI
             this.txtAdr.BorderThickness = 1;
             this.txtAdr.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtAdr.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAdr.DefaultFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdr.DefaultFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdr.DefaultText = "";
             this.txtAdr.FillColor = System.Drawing.Color.White;
             this.txtAdr.ForeColor = System.Drawing.SystemColors.InfoText;
@@ -182,7 +234,7 @@ namespace GUI
             this.txtAdr.SelectionLength = 0;
             this.txtAdr.SelectionStart = 0;
             this.txtAdr.ShortcutsEnabled = true;
-            this.txtAdr.Size = new System.Drawing.Size(150, 35);
+            this.txtAdr.Size = new System.Drawing.Size(150, 40);
             this.txtAdr.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtAdr.TabIndex = 18;
             this.txtAdr.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -247,10 +299,10 @@ namespace GUI
             this.dateBD.IconColor = System.Drawing.Color.LightCyan;
             this.dateBD.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dateBD.LeftTextMargin = 5;
-            this.dateBD.Location = new System.Drawing.Point(456, 109);
+            this.dateBD.Location = new System.Drawing.Point(440, 109);
             this.dateBD.MinimumSize = new System.Drawing.Size(4, 32);
             this.dateBD.Name = "dateBD";
-            this.dateBD.Size = new System.Drawing.Size(209, 32);
+            this.dateBD.Size = new System.Drawing.Size(238, 32);
             this.dateBD.TabIndex = 15;
             // 
             // cbGender
@@ -308,7 +360,7 @@ namespace GUI
             this.txtPhone.BorderThickness = 1;
             this.txtPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhone.DefaultFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.DefaultFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.DefaultText = "";
             this.txtPhone.FillColor = System.Drawing.Color.White;
             this.txtPhone.ForeColor = System.Drawing.SystemColors.InfoText;
@@ -355,7 +407,7 @@ namespace GUI
             this.txtPhone.SelectionLength = 0;
             this.txtPhone.SelectionStart = 0;
             this.txtPhone.ShortcutsEnabled = true;
-            this.txtPhone.Size = new System.Drawing.Size(150, 35);
+            this.txtPhone.Size = new System.Drawing.Size(150, 40);
             this.txtPhone.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPhone.TabIndex = 11;
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -433,7 +485,7 @@ namespace GUI
             this.txtName.BorderThickness = 1;
             this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName.DefaultFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.DefaultFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.DefaultText = "";
             this.txtName.FillColor = System.Drawing.Color.White;
             this.txtName.ForeColor = System.Drawing.SystemColors.InfoText;
@@ -480,7 +532,7 @@ namespace GUI
             this.txtName.SelectionLength = 0;
             this.txtName.SelectionStart = 0;
             this.txtName.ShortcutsEnabled = true;
-            this.txtName.Size = new System.Drawing.Size(150, 35);
+            this.txtName.Size = new System.Drawing.Size(150, 40);
             this.txtName.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtName.TabIndex = 1;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -603,58 +655,6 @@ namespace GUI
             this.EmpGender.HeaderText = "Gender";
             this.EmpGender.Name = "EmpGender";
             this.EmpGender.ReadOnly = true;
-            // 
-            // btnDeleteEmp
-            // 
-            this.btnDeleteEmp.ActiveBorderThickness = 1;
-            this.btnDeleteEmp.ActiveCornerRadius = 20;
-            this.btnDeleteEmp.ActiveFillColor = System.Drawing.Color.Crimson;
-            this.btnDeleteEmp.ActiveForecolor = System.Drawing.Color.White;
-            this.btnDeleteEmp.ActiveLineColor = System.Drawing.Color.Crimson;
-            this.btnDeleteEmp.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnDeleteEmp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteEmp.BackgroundImage")));
-            this.btnDeleteEmp.ButtonText = "Delete Employee";
-            this.btnDeleteEmp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteEmp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteEmp.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnDeleteEmp.IdleBorderThickness = 1;
-            this.btnDeleteEmp.IdleCornerRadius = 20;
-            this.btnDeleteEmp.IdleFillColor = System.Drawing.Color.White;
-            this.btnDeleteEmp.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.btnDeleteEmp.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnDeleteEmp.Location = new System.Drawing.Point(710, 181);
-            this.btnDeleteEmp.Margin = new System.Windows.Forms.Padding(5);
-            this.btnDeleteEmp.Name = "btnDeleteEmp";
-            this.btnDeleteEmp.Size = new System.Drawing.Size(181, 54);
-            this.btnDeleteEmp.TabIndex = 19;
-            this.btnDeleteEmp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDeleteEmp.Click += new System.EventHandler(this.bunifuThinButton21_Click);
-            // 
-            // btnEditEmp
-            // 
-            this.btnEditEmp.ActiveBorderThickness = 1;
-            this.btnEditEmp.ActiveCornerRadius = 20;
-            this.btnEditEmp.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btnEditEmp.ActiveForecolor = System.Drawing.Color.White;
-            this.btnEditEmp.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnEditEmp.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnEditEmp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditEmp.BackgroundImage")));
-            this.btnEditEmp.ButtonText = "Edit Employee";
-            this.btnEditEmp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditEmp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditEmp.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnEditEmp.IdleBorderThickness = 1;
-            this.btnEditEmp.IdleCornerRadius = 20;
-            this.btnEditEmp.IdleFillColor = System.Drawing.Color.White;
-            this.btnEditEmp.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.btnEditEmp.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnEditEmp.Location = new System.Drawing.Point(440, 181);
-            this.btnEditEmp.Margin = new System.Windows.Forms.Padding(5);
-            this.btnEditEmp.Name = "btnEditEmp";
-            this.btnEditEmp.Size = new System.Drawing.Size(181, 54);
-            this.btnEditEmp.TabIndex = 20;
-            this.btnEditEmp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnEditEmp.Click += new System.EventHandler(this.btnEditEmp_Click);
             // 
             // fmEmp
             // 

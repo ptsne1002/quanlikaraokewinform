@@ -518,6 +518,111 @@ namespace DTO
             }
             return rs;
         }
+
+        public Customer GetCusByPhone(string phone)
+        {
+            Customer rs = new Customer();
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("select * FROM customer WHERE phone = {0}", phone);
+            OracleCommand cmd = new OracleCommand(query, conn);
+            OracleDataReader rd;
+            try
+            {
+                conn.Open();
+                rd = cmd.ExecuteReader();
+                if(rd.HasRows)
+                {
+                    while(rd.Read())
+                    {
+                        rs.CustomerId = rd.GetInt32(0);
+                        rs.CustomerName = rd.GetString(1);
+                        rs.Phone = rd.GetString(2);
+                    }
+                }
+                
+            }
+            catch (Exception e)
+            {
+                
+            }
+            return rs;
+        }
+
+
+        // Process Booking with DB
+
+        public string InsertBooking(Booking b)
+        {
+            string rs = "";
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("insert into booking(roomid, empid, customerid, timecreated) values ({0}, {1}, {2}, '{3}')",
+                                          b.Room.RoomId, b.Emp.EmployeeId, b.Cus.CustomerId, b.TimeStart);
+            OracleCommand cmd = new OracleCommand(query, conn);
+            try
+            {
+                conn.Open();
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    rs = "Successful";
+                }
+                else
+                {
+                    rs = "Sorry! Can't Add New Booking";
+                }
+            }
+            catch (Exception e)
+            {
+                rs = e.Message;
+            }
+            return rs;
+        }
+
+        public List<Booking> GetBookingUsing()
+        {
+            List<Booking> temp = new List<Booking>();
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = "select * from booking b, room r, employee e, customer c where b.roomid = r.roomid and b.empid = e.employeeid and b.customerid = c.customerid and b.status = 'Using' order by bookingid ASC";
+            OracleCommand cmd = new OracleCommand(query, conn);
+            OracleDataReader rd;
+            try
+            {
+                conn.Open();
+                rd = cmd.ExecuteReader();
+
+                if (rd.HasRows)
+                    while (rd.Read())
+                    {
+                        Booking t = new Booking();
+                        t.BookingId = rd.GetInt32(0);
+                        t.Room.RoomId = rd.GetInt32(1);
+                        t.Emp.EmployeeId = rd.GetInt32(2);
+                        t.Cus.CustomerId = rd.GetInt32(3);
+                        t.Status = rd.GetString(4);
+                        t.TimeStart = rd.GetString(5);
+                        t.Room.RoomName = rd.GetString(7);
+                        t.Room.Type = rd.GetString(8);
+                        t.Room.PricePerHours = rd.GetInt32(9);
+                        t.Room.Status = rd.GetString(10);
+                        t.Emp.EmployeeName = rd.GetString(12);
+                        t.Emp.Phone = rd.GetString(13);
+                        t.Emp.Address = rd.GetString(14);
+                        t.Emp.Role = rd.GetString(15);
+                        t.Emp.Salary = rd.GetInt32(16);
+                        t.Emp.BirthDay = rd.GetString(17);
+                        t.Emp.Gender = rd.GetString(18);
+                        t.Cus.CustomerName = rd.GetString(20);
+                        t.Cus.Phone = rd.GetString(21);
+
+                        temp.Add(t);
+                    }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return temp;
+        }
     }
 
 

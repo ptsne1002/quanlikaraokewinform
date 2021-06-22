@@ -156,11 +156,11 @@
   </data>
   <data name="txtAdr.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJYAAAAjCAYAAAB2BvMkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACWSURBVHhe7dKxDcMwAANB7T+VDI2RMTJADAFqUtvf3QFs
+        iVBORw0KGgoAAAANSUhEUgAAAJYAAAAoCAYAAAAcwQPnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACiSURBVHhe7dKxDcMwAANB7T+VDI2RMTJADAFqUtvf3QFs
         WP+AzFrrM+f8mT3dbulkNcY+4A27pZOVsHiPsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgI
-        i4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLhLBI/IV1Xdd3H2ZPt1s6WcHbxrgBUP3/
-        cVcpG/0AAAAASUVORK5CYII=
+        i4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLxF9Y13V992H2
+        dLulkxW8bYwbYul9M+Janb8AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnAdd.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -196,20 +196,20 @@
   </data>
   <data name="txtPhone.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJYAAAAjCAYAAAB2BvMkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACWSURBVHhe7dKxDcMwAANB7T+VDI2RMTJADAFqUtvf3QFs
+        iVBORw0KGgoAAAANSUhEUgAAAJYAAAAoCAYAAAAcwQPnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACiSURBVHhe7dKxDcMwAANB7T+VDI2RMTJADAFqUtvf3QFs
         WP+AzFrrM+f8mT3dbulkNcY+4A27pZOVsHiPsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgI
-        i4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLhLBI/IV1Xdd3H2ZPt1s6WcHbxrgBUP3/
-        cVcpG/0AAAAASUVORK5CYII=
+        i4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLxF9Y13V992H2
+        dLulkxW8bYwbYul9M+Janb8AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="txtName.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJYAAAAjCAYAAAB2BvMkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACWSURBVHhe7dKxDcMwAANB7T+VDI2RMTJADAFqUtvf3QFs
+        iVBORw0KGgoAAAANSUhEUgAAAJYAAAAoCAYAAAAcwQPnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACiSURBVHhe7dKxDcMwAANB7T+VDI2RMTJADAFqUtvf3QFs
         WP+AzFrrM+f8mT3dbulkNcY+4A27pZOVsHiPsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgI
-        i4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLhLBI/IV1Xdd3H2ZPt1s6WcHbxrgBUP3/
-        cVcpG/0AAAAASUVORK5CYII=
+        i4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLhLBICIuEsEgIi4SwSAiLxF9Y13V992H2
+        dLulkxW8bYwbYul9M+Janb8AAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

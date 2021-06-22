@@ -34,5 +34,11 @@ namespace BUS
             return rs;
         }
 
+        public Customer GetCusByPhone(string phone)
+        {
+            Customer rs = new Customer();
+            rs = model.GetCusByPhone(phone);
+            return rs;
+        }
     }
 }

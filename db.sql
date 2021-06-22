@@ -178,11 +178,30 @@ select * from room;
 
 select * from customer order by customerid ASC;
 
-select * from room order by roomid ASC
+select * from booking;
+alter session set nls_date_format = 'dd/MM/yyyy hh24:mi:ss'
+
+insert into booking(roomid, empid, customerid, timecreated) values (1, 22, 1, to_date(','hh24:mi dd/mm/yyyy');
+
+alter table booking
+add  timecreated nvarchar2(50);
+
+alter table booking
+drop column timecreated ;
 
 
+delete booking
+where status = 'Done';
 
+select *
+from booking b, room r, employee e, customer c
+where b.roomid = r.roomid
+and b.empid = e.employeeid
+and b.customerid = c.customerid
+and b.status = 'Using' 
+order by bookingid ASC;
 
+commit;
 
 
 

@@ -29,13 +29,17 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMain));
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -44,6 +48,7 @@ namespace GUI
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMain));
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
@@ -53,16 +58,16 @@ namespace GUI
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnInvoice = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.lbDate = new System.Windows.Forms.Label();
+            this.btnBooking = new Bunifu.Framework.UI.BunifuThinButton2();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IdOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblBooking = new System.Windows.Forms.DataGridView();
+            this.rmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Namecus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phonecus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Employee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tblEmp = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,9 +91,11 @@ namespace GUI
             this.txtName = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtPhone = new Bunifu.UI.WinForms.BunifuTextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnTest = new Bunifu.Framework.UI.BunifuThinButton2();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblBooking)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblEmp)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -223,7 +230,9 @@ namespace GUI
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.bunifuThinButton22);
+            this.groupBox1.Controls.Add(this.btnTest);
+            this.groupBox1.Controls.Add(this.lbDate);
+            this.groupBox1.Controls.Add(this.btnBooking);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
@@ -239,34 +248,47 @@ namespace GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Booking Room";
             // 
-            // bunifuThinButton22
+            // lbDate
             // 
-            this.bunifuThinButton22.ActiveBorderThickness = 1;
-            this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
-            this.bunifuThinButton22.ButtonText = "Add to Booking";
-            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton22.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.IdleBorderThickness = 1;
-            this.bunifuThinButton22.IdleCornerRadius = 20;
-            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(547, 386);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(183, 54);
-            this.bunifuThinButton22.TabIndex = 17;
-            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.Color.Red;
+            this.lbDate.Location = new System.Drawing.Point(1072, 18);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(183, 24);
+            this.lbDate.TabIndex = 18;
+            this.lbDate.Text = "24:24 22/12/2000";
+            // 
+            // btnBooking
+            // 
+            this.btnBooking.ActiveBorderThickness = 1;
+            this.btnBooking.ActiveCornerRadius = 20;
+            this.btnBooking.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnBooking.ActiveForecolor = System.Drawing.Color.White;
+            this.btnBooking.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnBooking.BackColor = System.Drawing.Color.Transparent;
+            this.btnBooking.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBooking.BackgroundImage")));
+            this.btnBooking.ButtonText = "Add to Booking";
+            this.btnBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBooking.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBooking.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnBooking.IdleBorderThickness = 1;
+            this.btnBooking.IdleCornerRadius = 20;
+            this.btnBooking.IdleFillColor = System.Drawing.Color.White;
+            this.btnBooking.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btnBooking.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnBooking.Location = new System.Drawing.Point(547, 386);
+            this.btnBooking.Margin = new System.Windows.Forms.Padding(5);
+            this.btnBooking.Name = "btnBooking";
+            this.btnBooking.Size = new System.Drawing.Size(183, 54);
+            this.btnBooking.TabIndex = 17;
+            this.btnBooking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.dataGridView1);
+            this.groupBox5.Controls.Add(this.tblBooking);
+            this.groupBox5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.Azure;
             this.groupBox5.Location = new System.Drawing.Point(358, 441);
             this.groupBox5.Name = "groupBox5";
@@ -275,73 +297,65 @@ namespace GUI
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Room In Use";
             // 
-            // dataGridView1
+            // tblBooking
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdOrder,
-            this.Room,
+            this.tblBooking.AllowUserToAddRows = false;
+            this.tblBooking.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.tblBooking.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tblBooking.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblBooking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rmName,
+            this.Type,
+            this.Namecus,
             this.TimeStart,
-            this.IdCustomer,
-            this.CustomerName,
-            this.IdEmp,
-            this.EmpName});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(908, 189);
-            this.dataGridView1.TabIndex = 0;
+            this.phonecus,
+            this.Employee});
+            this.tblBooking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblBooking.Location = new System.Drawing.Point(3, 19);
+            this.tblBooking.Name = "tblBooking";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.tblBooking.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.tblBooking.Size = new System.Drawing.Size(908, 193);
+            this.tblBooking.TabIndex = 0;
             // 
-            // IdOrder
+            // rmName
             // 
-            this.IdOrder.FillWeight = 126.6829F;
-            this.IdOrder.HeaderText = "Id";
-            this.IdOrder.Name = "IdOrder";
-            this.IdOrder.Width = 50;
+            this.rmName.HeaderText = "Room Name";
+            this.rmName.Name = "rmName";
+            this.rmName.ReadOnly = true;
             // 
-            // Room
+            // Type
             // 
-            this.Room.FillWeight = 262.9442F;
-            this.Room.HeaderText = "Room Name";
-            this.Room.Name = "Room";
-            this.Room.Width = 150;
+            this.Type.HeaderText = "Type Room";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            // 
+            // Namecus
+            // 
+            this.Namecus.HeaderText = "Customer Name";
+            this.Namecus.Name = "Namecus";
+            this.Namecus.ReadOnly = true;
             // 
             // TimeStart
             // 
-            this.TimeStart.FillWeight = 62.0746F;
             this.TimeStart.HeaderText = "Time Start";
             this.TimeStart.Name = "TimeStart";
-            this.TimeStart.Width = 155;
+            this.TimeStart.ReadOnly = true;
             // 
-            // IdCustomer
+            // phonecus
             // 
-            this.IdCustomer.FillWeight = 62.0746F;
-            this.IdCustomer.HeaderText = "Id Customer";
-            this.IdCustomer.Name = "IdCustomer";
-            this.IdCustomer.Width = 70;
+            this.phonecus.HeaderText = "Phone";
+            this.phonecus.Name = "phonecus";
+            this.phonecus.ReadOnly = true;
             // 
-            // CustomerName
+            // Employee
             // 
-            this.CustomerName.FillWeight = 62.0746F;
-            this.CustomerName.HeaderText = "Customer Name";
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.Width = 200;
-            // 
-            // IdEmp
-            // 
-            this.IdEmp.FillWeight = 62.0746F;
-            this.IdEmp.HeaderText = "Id Emp";
-            this.IdEmp.Name = "IdEmp";
-            this.IdEmp.Width = 50;
-            // 
-            // EmpName
-            // 
-            this.EmpName.FillWeight = 62.0746F;
-            this.EmpName.HeaderText = "Emp Name";
-            this.EmpName.Name = "EmpName";
-            this.EmpName.Width = 190;
+            this.Employee.HeaderText = "Emp";
+            this.Employee.Name = "Employee";
+            this.Employee.ReadOnly = true;
             // 
             // groupBox4
             // 
@@ -359,9 +373,9 @@ namespace GUI
             // 
             this.tblEmp.AllowUserToAddRows = false;
             this.tblEmp.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.tblEmp.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.tblEmp.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.tblEmp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tblEmp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -373,11 +387,12 @@ namespace GUI
             this.tblEmp.Location = new System.Drawing.Point(3, 19);
             this.tblEmp.Name = "tblEmp";
             this.tblEmp.ReadOnly = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.tblEmp.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.tblEmp.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tblEmp.Size = new System.Drawing.Size(493, 317);
             this.tblEmp.TabIndex = 0;
+            this.tblEmp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblEmp_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -416,9 +431,9 @@ namespace GUI
             // 
             this.tblRoom.AllowUserToAddRows = false;
             this.tblRoom.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.tblRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.tblRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.tblRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tblRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -431,11 +446,12 @@ namespace GUI
             this.tblRoom.Location = new System.Drawing.Point(3, 19);
             this.tblRoom.Name = "tblRoom";
             this.tblRoom.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.tblRoom.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.tblRoom.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.tblRoom.Size = new System.Drawing.Size(406, 317);
             this.tblRoom.TabIndex = 0;
+            this.tblRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblRoom_CellClick);
             // 
             // Id
             // 
@@ -510,8 +526,9 @@ namespace GUI
             this.btnAddCus.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddCus.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnAddCus.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnAddCus.Enabled = false;
             this.btnAddCus.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnAddCus.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddCus.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCus.ForeColor = System.Drawing.Color.White;
             this.btnAddCus.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddCus.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -568,8 +585,9 @@ namespace GUI
             this.btnAddCus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAddCus.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAddCus.TextMarginLeft = 0;
-            this.btnAddCus.TextPadding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnAddCus.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAddCus.UseDefaultRadiusAndThickness = true;
+            this.btnAddCus.Click += new System.EventHandler(this.btnAddCus_Click);
             // 
             // btnSearchCus
             // 
@@ -600,7 +618,7 @@ namespace GUI
             this.btnSearchCus.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnSearchCus.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnSearchCus.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnSearchCus.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSearchCus.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchCus.ForeColor = System.Drawing.Color.White;
             this.btnSearchCus.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchCus.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -657,8 +675,9 @@ namespace GUI
             this.btnSearchCus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSearchCus.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSearchCus.TextMarginLeft = 0;
-            this.btnSearchCus.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnSearchCus.TextPadding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnSearchCus.UseDefaultRadiusAndThickness = true;
+            this.btnSearchCus.Click += new System.EventHandler(this.btnSearchCus_Click);
             // 
             // label3
             // 
@@ -673,6 +692,10 @@ namespace GUI
             // 
             this.tblCustomer.AllowUserToAddRows = false;
             this.tblCustomer.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.tblCustomer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.tblCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tblCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -682,8 +705,12 @@ namespace GUI
             this.tblCustomer.Location = new System.Drawing.Point(3, 316);
             this.tblCustomer.Name = "tblCustomer";
             this.tblCustomer.ReadOnly = true;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.tblCustomer.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.tblCustomer.Size = new System.Drawing.Size(331, 298);
             this.tblCustomer.TabIndex = 17;
+            this.tblCustomer.Visible = false;
             // 
             // cusname
             // 
@@ -700,7 +727,7 @@ namespace GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 136);
+            this.label2.Location = new System.Drawing.Point(31, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 19);
             this.label2.TabIndex = 12;
@@ -709,7 +736,7 @@ namespace GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 77);
+            this.label1.Location = new System.Drawing.Point(31, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 19);
             this.label1.TabIndex = 11;
@@ -732,9 +759,10 @@ namespace GUI
             this.txtName.BorderThickness = 1;
             this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtName.DefaultFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.DefaultText = "";
             this.txtName.FillColor = System.Drawing.Color.White;
+            this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.HideSelection = true;
             this.txtName.IconLeft = null;
             this.txtName.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -742,7 +770,7 @@ namespace GUI
             this.txtName.IconRight = null;
             this.txtName.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.Lines = new string[0];
-            this.txtName.Location = new System.Drawing.Point(128, 127);
+            this.txtName.Location = new System.Drawing.Point(128, 124);
             this.txtName.MaxLength = 32767;
             this.txtName.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtName.Modified = false;
@@ -765,7 +793,7 @@ namespace GUI
             this.txtName.OnHoverState = stateProperties3;
             stateProperties4.BorderColor = System.Drawing.Color.Silver;
             stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.ForeColor = System.Drawing.Color.Black;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtName.OnIdleState = stateProperties4;
             this.txtName.Padding = new System.Windows.Forms.Padding(3);
@@ -778,7 +806,7 @@ namespace GUI
             this.txtName.SelectionLength = 0;
             this.txtName.SelectionStart = 0;
             this.txtName.ShortcutsEnabled = true;
-            this.txtName.Size = new System.Drawing.Size(203, 37);
+            this.txtName.Size = new System.Drawing.Size(203, 40);
             this.txtName.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtName.TabIndex = 10;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -806,9 +834,10 @@ namespace GUI
             this.txtPhone.BorderThickness = 1;
             this.txtPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhone.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtPhone.DefaultFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.DefaultText = "";
             this.txtPhone.FillColor = System.Drawing.Color.White;
+            this.txtPhone.ForeColor = System.Drawing.Color.Black;
             this.txtPhone.HideSelection = true;
             this.txtPhone.IconLeft = null;
             this.txtPhone.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -816,7 +845,7 @@ namespace GUI
             this.txtPhone.IconRight = null;
             this.txtPhone.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.Lines = new string[0];
-            this.txtPhone.Location = new System.Drawing.Point(128, 68);
+            this.txtPhone.Location = new System.Drawing.Point(128, 65);
             this.txtPhone.MaxLength = 32767;
             this.txtPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPhone.Modified = false;
@@ -839,7 +868,7 @@ namespace GUI
             this.txtPhone.OnHoverState = stateProperties7;
             stateProperties8.BorderColor = System.Drawing.Color.Silver;
             stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.ForeColor = System.Drawing.Color.Black;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPhone.OnIdleState = stateProperties8;
             this.txtPhone.Padding = new System.Windows.Forms.Padding(3);
@@ -852,7 +881,7 @@ namespace GUI
             this.txtPhone.SelectionLength = 0;
             this.txtPhone.SelectionStart = 0;
             this.txtPhone.ShortcutsEnabled = true;
-            this.txtPhone.Size = new System.Drawing.Size(203, 37);
+            this.txtPhone.Size = new System.Drawing.Size(203, 40);
             this.txtPhone.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPhone.TabIndex = 9;
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -862,6 +891,7 @@ namespace GUI
             this.txtPhone.TextPlaceholder = "Phone Number";
             this.txtPhone.UseSystemPasswordChar = false;
             this.txtPhone.WordWrap = true;
+            this.txtPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPhone_KeyDown);
             // 
             // linkLabel1
             // 
@@ -876,6 +906,35 @@ namespace GUI
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Design by PtS";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnTest
+            // 
+            this.btnTest.ActiveBorderThickness = 1;
+            this.btnTest.ActiveCornerRadius = 20;
+            this.btnTest.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnTest.ActiveForecolor = System.Drawing.Color.White;
+            this.btnTest.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnTest.BackColor = System.Drawing.Color.Transparent;
+            this.btnTest.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTest.BackgroundImage")));
+            this.btnTest.ButtonText = "Test";
+            this.btnTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTest.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTest.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnTest.IdleBorderThickness = 1;
+            this.btnTest.IdleCornerRadius = 20;
+            this.btnTest.IdleFillColor = System.Drawing.Color.White;
+            this.btnTest.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btnTest.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnTest.Location = new System.Drawing.Point(866, 386);
+            this.btnTest.Margin = new System.Windows.Forms.Padding(5);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(183, 54);
+            this.btnTest.TabIndex = 19;
+            this.btnTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fmMain
             // 
@@ -903,7 +962,7 @@ namespace GUI
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblBooking)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tblEmp)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -939,25 +998,27 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tblBooking;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuTextBox txtName;
         private Bunifu.UI.WinForms.BunifuTextBox txtPhone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdOrder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Room;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeStart;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCustomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmpName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnBooking;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAddCus;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSearchCus;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView tblCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn cusname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.Label lbDate;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rmName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Namecus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phonecus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Employee;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnTest;
     }
 }
