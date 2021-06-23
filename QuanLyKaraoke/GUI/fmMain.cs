@@ -120,7 +120,8 @@ namespace GUI
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-
+            fmCheckOut fmCheckOut = new fmCheckOut();
+            fmCheckOut.ShowDialog();
         }
 
         private void btnEmp_Click(object sender, EventArgs e)

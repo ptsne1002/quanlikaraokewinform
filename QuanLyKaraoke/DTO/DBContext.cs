@@ -320,6 +320,37 @@ namespace DTO
             }
             return temp;
         }
+        public List<Room> GetRoomIsUsing()
+        {
+            List<Room> temp = new List<Room>();
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = "select * from room where status = 'Busy' order by roomid ASC";
+            OracleCommand cmd = new OracleCommand(query, conn);
+            OracleDataReader rd;
+            try
+            {
+                conn.Open();
+                rd = cmd.ExecuteReader();
+
+                if (rd.HasRows)
+                    while (rd.Read())
+                    {
+                        Room t = new Room();
+                        t.RoomId = rd.GetInt32(0);
+                        t.RoomName = rd.GetString(1);
+                        t.Type = rd.GetString(2);
+                        t.PricePerHours = rd.GetInt32(3);
+                        t.Status = rd.GetString(4);
+                        temp.Add(t);
+                    }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return temp;
+        }
 
         public string InsertRoom(Room r)
         {
@@ -623,6 +654,123 @@ namespace DTO
             }
             return temp;
         }
+
+        // Process Service with DB
+
+        public List<Service> GetALLService()
+        {
+            List<Service> temp = new List<Service>();
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = "select * from service order by serviceid ASC";
+            OracleCommand cmd = new OracleCommand(query, conn);
+            OracleDataReader rd;
+            try
+            {
+                conn.Open();
+                rd = cmd.ExecuteReader();
+
+                if (rd.HasRows)
+                    while (rd.Read())
+                    {
+                        Service t = new Service();
+                        t.ServiceID = rd.GetInt32(0);
+                        t.ServiceName = rd.GetString(1);
+                        t.Price = rd.GetInt32(2);
+                        temp.Add(t);
+                    }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return temp;
+        }
+
+
+        public string InsertService(Service s)
+        {
+            string rs = "";
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("insert into service(servicename, price) values ('{0}','{1}')",
+                                          s.ServiceName, s.Price);
+            OracleCommand cmd = new OracleCommand(query, conn);
+            try
+            {
+                conn.Open();
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    rs = "Successful";
+                }
+                else
+                {
+                    rs = "Sorry! Can't Add New Service";
+                }
+            }
+            catch (Exception e)
+            {
+                rs = e.Message;
+            }
+            return rs;
+        }
+
+        public string EditService(Service s)
+        {
+            string rs = "";
+            OracleConnection conn = Connect.ConnecttoDB();
+            conn.Open();
+            OracleTransaction transaction;
+            transaction = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+            string query = string.Format("UPDATE service SET servicename = '{0}', price = '{1}' WHERE serviceid = {2}",
+                                          s.ServiceName, s.Price, s.ServiceID);
+            OracleCommand cmd = conn.CreateCommand();
+            cmd.Transaction = transaction;
+
+            try
+            {
+                cmd.CommandText = query;
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    rs = "Successful";
+                    transaction.Commit();
+                }
+                else
+                {
+                    rs = "Sorry! Can't Edit Service";
+                }
+            }
+            catch (Exception e)
+            {
+                rs = e.Message;
+            }
+            return rs;
+        }
+
+        public string DeleteService(int id)
+        {
+            string rs = "";
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("DELETE FROM service WHERE serviceid = {0}", id);
+            OracleCommand cmd = new OracleCommand(query, conn);
+            try
+            {
+                conn.Open();
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    rs = "Successful";
+                }
+                else
+                {
+                    rs = "Sorry! Can't Delete Service";
+                }
+            }
+            catch (Exception e)
+            {
+                rs = e.Message;
+            }
+            return rs;
+        }
+
     }
 
 

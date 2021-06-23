@@ -109,3 +109,4 @@ E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\bin\Deb
 E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Debug\GUI.fmRoom.resources
 E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Debug\GUI.fmCustomer.resources
 E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Debug\GUI.fmCheckOut.resources
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Debug\GUI.fmService.resources

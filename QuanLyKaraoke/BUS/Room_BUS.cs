@@ -16,6 +16,12 @@ namespace BUS
             temp = model.GetAllRoom();
             return temp;
         }
+        public List<Room> GetRoomIsUsing()
+        {
+            List<Room> temp = new List<Room>();
+            temp = model.GetRoomIsUsing();
+            return temp;
+        }
 
         public string InsertRoom(Room r)
         {
@@ -36,5 +42,8 @@ namespace BUS
             rs = model.EdiRoom(r);
             return rs;
         }
+
+        
+
     }
 }
