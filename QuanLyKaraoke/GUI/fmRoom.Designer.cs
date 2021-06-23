@@ -187,7 +187,6 @@ namespace GUI
             this.label7.Size = new System.Drawing.Size(96, 21);
             this.label7.TabIndex = 10;
             this.label7.Text = "Type Room";
-
             // 
             // txtName
             // 
@@ -353,6 +352,8 @@ namespace GUI
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "fmRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Room Manager";

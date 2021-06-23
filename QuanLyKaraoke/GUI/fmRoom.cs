@@ -37,7 +37,7 @@ namespace GUI
                 newRow.Cells[0].Value = this.listRoom[i].RoomId;
                 newRow.Cells[1].Value = this.listRoom[i].RoomName;
                 newRow.Cells[2].Value = this.listRoom[i].Type;
-                newRow.Cells[3].Value = this.listRoom[i].PricePerHours;
+                newRow.Cells[3].Value = this.listRoom[i].PricePerHours.ToString("C2");
                 newRow.Cells[4].Value = this.listRoom[i].Status;
 
                 tblRoom.Rows.Add(newRow);

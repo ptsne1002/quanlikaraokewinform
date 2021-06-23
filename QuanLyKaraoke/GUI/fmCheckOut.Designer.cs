@@ -38,6 +38,11 @@ namespace GUI
             this.txtNameCus = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tblSerVice = new System.Windows.Forms.DataGridView();
+            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.txtRoomCharge = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,15 +59,10 @@ namespace GUI
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbPriceService = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lbAllMoney = new System.Windows.Forms.Label();
             this.btnCreateInvoice = new Bunifu.Framework.UI.BunifuTileButton();
-            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblRoomBooking)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -182,6 +182,36 @@ namespace GUI
             this.tblSerVice.ReadOnly = true;
             this.tblSerVice.Size = new System.Drawing.Size(603, 208);
             this.tblSerVice.TabIndex = 0;
+            // 
+            // ServiceName
+            // 
+            this.ServiceName.HeaderText = "Service Name";
+            this.ServiceName.Name = "ServiceName";
+            this.ServiceName.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            // 
+            // TimOrder
+            // 
+            this.TimOrder.HeaderText = "Time Order";
+            this.TimOrder.Name = "TimOrder";
+            this.TimOrder.ReadOnly = true;
+            // 
+            // unitprice
+            // 
+            this.unitprice.HeaderText = "Unit Price";
+            this.unitprice.Name = "unitprice";
+            this.unitprice.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
             // 
             // label12
             // 
@@ -329,15 +359,15 @@ namespace GUI
             this.label8.TabIndex = 2;
             this.label8.Text = "Total Price Service :";
             // 
-            // label9
+            // lbPriceService
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(863, 540);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 19);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "99999 USD";
+            this.lbPriceService.AutoSize = true;
+            this.lbPriceService.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPriceService.Location = new System.Drawing.Point(863, 540);
+            this.lbPriceService.Name = "lbPriceService";
+            this.lbPriceService.Size = new System.Drawing.Size(27, 19);
+            this.lbPriceService.TabIndex = 3;
+            this.lbPriceService.Text = "$0";
             // 
             // label10
             // 
@@ -345,19 +375,20 @@ namespace GUI
             this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(583, 586);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(225, 25);
+            this.label10.Size = new System.Drawing.Size(237, 25);
             this.label10.TabIndex = 4;
-            this.label10.Text = "Total Money Payable";
+            this.label10.Text = "Total Money Payable :";
             // 
-            // label11
+            // lbAllMoney
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(863, 588);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(105, 22);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "99999 USD";
+            this.lbAllMoney.AutoSize = true;
+            this.lbAllMoney.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAllMoney.ForeColor = System.Drawing.Color.Crimson;
+            this.lbAllMoney.Location = new System.Drawing.Point(824, 586);
+            this.lbAllMoney.Name = "lbAllMoney";
+            this.lbAllMoney.Size = new System.Drawing.Size(36, 25);
+            this.lbAllMoney.TabIndex = 5;
+            this.lbAllMoney.Text = "$0";
             // 
             // btnCreateInvoice
             // 
@@ -379,49 +410,22 @@ namespace GUI
             this.btnCreateInvoice.TabIndex = 6;
             this.btnCreateInvoice.Click += new System.EventHandler(this.bunifuTileButton1_Click);
             // 
-            // ServiceName
-            // 
-            this.ServiceName.HeaderText = "Service Name";
-            this.ServiceName.Name = "ServiceName";
-            this.ServiceName.ReadOnly = true;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            // 
-            // TimOrder
-            // 
-            this.TimOrder.HeaderText = "Time Order";
-            this.TimOrder.Name = "TimOrder";
-            this.TimOrder.ReadOnly = true;
-            // 
-            // unitprice
-            // 
-            this.unitprice.HeaderText = "Unit Price";
-            this.unitprice.Name = "unitprice";
-            this.unitprice.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
             // fmCheckOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.btnCreateInvoice);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.lbAllMoney);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lbPriceService);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "fmCheckOut";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Check Out";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tblRoomBooking)).EndInit();
@@ -459,9 +463,9 @@ namespace GUI
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView tblSerVice;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbPriceService;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbAllMoney;
         private Bunifu.Framework.UI.BunifuTileButton btnCreateInvoice;
         private System.Windows.Forms.TextBox txtNameCus;
         private System.Windows.Forms.Label label12;

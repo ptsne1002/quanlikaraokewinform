@@ -320,6 +320,7 @@ namespace DTO
             }
             return temp;
         }
+
         public List<Room> GetRoomIsUsing()
         {
             List<Room> temp = new List<Room>();
@@ -771,6 +772,69 @@ namespace DTO
             return rs;
         }
 
+
+        // Process Serivce with 
+
+        public string InsertOrderService(OrderService s)
+        {
+            string rs = "";
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("insert into orderservice(bookingid, serviceid, amount, timecreated) values ({0},{1},{2},'{3}')",
+                                          s.BookingId, s.ServiceId, s.Amount,DateTime.Now.ToString("HH:mm dd/MM/yyyy"));
+            OracleCommand cmd = new OracleCommand(query, conn);
+            try
+            {
+                conn.Open();
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    rs = "Successful";
+                }
+                else
+                {
+                    rs = "Sorry! Can't Add New OrderService";
+                }
+            }
+            catch (Exception e)
+            {
+                rs = e.Message;
+            }
+            return rs;
+        }
+
+        public List<OrderService> GetOSByBookingID(int id)
+        {
+            List<OrderService> temp = new List<OrderService>();
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("select * from orderservice o, service s where o.serviceid = s.serviceid and o.bookingid = {0}", id);
+            OracleCommand cmd = new OracleCommand(query, conn);
+            OracleDataReader rd;
+            try
+            {
+                conn.Open();
+                rd = cmd.ExecuteReader();
+
+                if (rd.HasRows)
+                    while (rd.Read())
+                    {
+                        OrderService t = new OrderService();
+                        t.BookingId = rd.GetInt32(0);
+                        t.ServiceId = rd.GetInt32(1);
+                        t.Amount = rd.GetInt32(2);
+                        t.Total = rd.GetInt32(3);
+                        t.TimeCreated = rd.GetString(4);
+                        t.NameService = rd.GetString(6);
+                        t.UnitPrice = rd.GetInt32(7);
+
+                        temp.Add(t);
+                    }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return temp;
+        }
     }
 
 

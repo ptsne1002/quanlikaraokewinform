@@ -35,7 +35,7 @@ namespace GUI
                 newRow.Cells[0].Value = this.listEmp[i].EmployeeId;
                 newRow.Cells[1].Value = this.listEmp[i].EmployeeName;
                 newRow.Cells[2].Value = this.listEmp[i].Role;
-                newRow.Cells[3].Value = this.listEmp[i].Salary;
+                newRow.Cells[3].Value = this.listEmp[i].Salary.ToString("C2");
                 newRow.Cells[4].Value = this.listEmp[i].Phone;
                 newRow.Cells[5].Value = this.listEmp[i].Address;
                 newRow.Cells[6].Value = this.listEmp[i].BirthDay;

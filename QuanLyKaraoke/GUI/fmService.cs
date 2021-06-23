@@ -17,17 +17,19 @@ namespace GUI
     public partial class fmService : Form
     {
         private Room_BUS controllerRoom = new Room_BUS();
+        private OrderService_BUS controllerOS = new OrderService_BUS();
         private Service_BUS controllerService = new Service_BUS();
-        private List<Room> listRoom = new List<Room>();
+        private Booking_BUS controllerBooking = new Booking_BUS();
         private List<Service> lsService = new List<Service>();
-        private List<Service> lsOrder = new List<Service>();
+        private List<OrderService> lsOrder = new List<OrderService>();
         private List<Booking> lsBooking = new List<Booking>();
         private bool t = false;
         private bool chooseRoom = false;
         private bool chooseService = false;
-        
+        private bool checkReturn = false;
         public fmService()
         {
+            lsBooking = controllerBooking.GetBookingUsing();
             InitializeComponent();
             LoadDBRoom();
             LoadDBService();
@@ -36,10 +38,10 @@ namespace GUI
 
         private void LoadDBRoom()
         {
-            listRoom = controllerRoom.GetRoomIsUsing();
-            for (int i = 0; i < listRoom.Count; i++)
+            
+            for (int i = 0; i < lsBooking.Count; i++)
             {
-                cbRoom.Items.Add(listRoom[i].RoomName);
+                cbRoom.Items.Add(lsBooking[i].Room.RoomName);
             }
         }
 
@@ -168,6 +170,14 @@ namespace GUI
         {
             //tạo 1 orderService để lưu trữ các servicer order
             int indexService = cbService.SelectedIndex;
+            int indexRoom = cbRoom.SelectedIndex;
+            OrderService od = new OrderService();
+            od.BookingId = lsBooking[indexRoom].BookingId;
+            od.ServiceId = lsService[indexService].ServiceID;
+            od.Amount = int.Parse(nbAmount.Value.ToString());
+            od.UnitPrice = lsService[indexService].Price;
+            od.TimeCreated = DateTime.Now.ToString("HH:mm dd/MM/yyyy");
+            lsBooking[indexRoom].LsOrder.Add(od);
         }
 
         private void AddToTblOrderService()
@@ -183,6 +193,15 @@ namespace GUI
             tblOrder.Rows.Add(newRow);
         }
 
+        private void CaculateTotalPrice()
+        {
+            int totalPrice = 0;
+            for (int i = 0; i < lsBooking[cbRoom.SelectedIndex].LsOrder.Count(); i++)
+            {
+                totalPrice += lsBooking[cbRoom.SelectedIndex].LsOrder[i].Amount * lsBooking[cbRoom.SelectedIndex].LsOrder[i].UnitPrice;
+            }
+            lbTotalPrice.Text = totalPrice.ToString("C2");
+        }
 
 
         private void btnOrderService_Click(object sender, EventArgs e)
@@ -194,6 +213,8 @@ namespace GUI
                     if (nbAmount.Value > 0)
                     {
                         AddToTblOrderService();
+                        AddToLsOrder();
+                        CaculateTotalPrice();
                     }
                     else
                     {
@@ -221,6 +242,50 @@ namespace GUI
         private void cbService_SelectedIndexChanged(object sender, EventArgs e)
         {
             chooseService = true;
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            if(checkReturn)
+            {
+                int index = tblOrder.CurrentCell.RowIndex;
+                if(lsBooking[cbRoom.SelectedIndex].LsOrder[index].Amount >1)
+                {
+                    lsBooking[cbRoom.SelectedIndex].LsOrder[index].Amount -= 1;
+                    tblOrder.Rows[index].Cells[1].Value = lsBooking[cbRoom.SelectedIndex].LsOrder[index].Amount;
+                    tblOrder.Rows[index].Cells[3].Value = 
+                        (lsBooking[cbRoom.SelectedIndex].LsOrder[index].Amount * lsBooking[cbRoom.SelectedIndex].LsOrder[index].UnitPrice).ToString("C2");
+                }
+                else
+                {
+                    lsBooking[cbRoom.SelectedIndex].LsOrder.RemoveAt(index);
+                    tblOrder.Rows.RemoveAt(index);
+                }
+                CaculateTotalPrice();
+
+
+            }    
+        }
+
+        private void tblOrder_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            checkReturn = true;
+        }
+
+        private void lbTotalPrice_Click(object sender, EventArgs e)
+        {
+            CaculateTotalPrice();
+        }
+
+        private void btnOke_Click(object sender, EventArgs e)
+        {
+            for(int i = 0; i < lsBooking[cbRoom.SelectedIndex].LsOrder.Count; i++)
+            {
+                OrderService os = new OrderService();
+                os = lsBooking[cbRoom.SelectedIndex].LsOrder[i];
+                controllerOS.InsertOrderService(os);
+            }
+            MessageBox.Show("Done", "Notification");
         }
     }
 }

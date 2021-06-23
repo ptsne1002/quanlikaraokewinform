@@ -79,7 +79,8 @@ namespace GUI
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            fmService fmSer = new fmService();
+            fmSer.ShowDialog();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

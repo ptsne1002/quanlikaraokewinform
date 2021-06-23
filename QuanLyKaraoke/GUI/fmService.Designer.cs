@@ -30,12 +30,13 @@ namespace GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmService));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nbPrice = new System.Windows.Forms.NumericUpDown();
@@ -51,6 +52,9 @@ namespace GUI
             this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnOke = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.lbTotalPrice = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnReturn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnOrderService = new Bunifu.Framework.UI.BunifuThinButton2();
             this.nbAmount = new System.Windows.Forms.NumericUpDown();
@@ -242,26 +246,26 @@ namespace GUI
             this.txtName.Modified = false;
             this.txtName.Multiline = false;
             this.txtName.Name = "txtName";
-            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtName.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtName.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtName.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.SystemColors.InfoText;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtName.OnIdleState = stateProperties8;
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtName.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtName.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtName.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.SystemColors.InfoText;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtName.OnIdleState = stateProperties4;
             this.txtName.Padding = new System.Windows.Forms.Padding(3);
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -322,9 +326,9 @@ namespace GUI
             this.tblService.Name = "tblService";
             this.tblService.ReadOnly = true;
             this.tblService.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.tblService.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.tblService.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tblService.Size = new System.Drawing.Size(507, 310);
             this.tblService.TabIndex = 0;
             this.tblService.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblService_CellClick);
@@ -350,6 +354,9 @@ namespace GUI
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.btnOke);
+            this.groupBox3.Controls.Add(this.lbTotalPrice);
+            this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.btnReturn);
             this.groupBox3.Controls.Add(this.btnOrderService);
             this.groupBox3.Controls.Add(this.nbAmount);
@@ -367,6 +374,118 @@ namespace GUI
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Service Select";
+            // 
+            // btnOke
+            // 
+            this.btnOke.AllowAnimations = true;
+            this.btnOke.AllowMouseEffects = true;
+            this.btnOke.AllowToggling = false;
+            this.btnOke.AnimationSpeed = 200;
+            this.btnOke.AutoGenerateColors = false;
+            this.btnOke.AutoRoundBorders = false;
+            this.btnOke.AutoSizeLeftIcon = true;
+            this.btnOke.AutoSizeRightIcon = true;
+            this.btnOke.BackColor = System.Drawing.Color.Transparent;
+            this.btnOke.BackColor1 = System.Drawing.Color.DodgerBlue;
+            this.btnOke.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOke.BackgroundImage")));
+            this.btnOke.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnOke.ButtonText = "Confirm Order";
+            this.btnOke.ButtonTextMarginLeft = 0;
+            this.btnOke.ColorContrastOnClick = 45;
+            this.btnOke.ColorContrastOnHover = 45;
+            this.btnOke.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnOke.CustomizableEdges = borderEdges1;
+            this.btnOke.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnOke.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnOke.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnOke.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnOke.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnOke.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOke.ForeColor = System.Drawing.Color.White;
+            this.btnOke.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOke.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnOke.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnOke.IconMarginLeft = 11;
+            this.btnOke.IconPadding = 10;
+            this.btnOke.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOke.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnOke.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnOke.IconSize = 25;
+            this.btnOke.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnOke.IdleBorderRadius = 1;
+            this.btnOke.IdleBorderThickness = 1;
+            this.btnOke.IdleFillColor = System.Drawing.Color.DodgerBlue;
+            this.btnOke.IdleIconLeftImage = null;
+            this.btnOke.IdleIconRightImage = null;
+            this.btnOke.IndicateFocus = false;
+            this.btnOke.Location = new System.Drawing.Point(320, 537);
+            this.btnOke.Name = "btnOke";
+            this.btnOke.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnOke.OnDisabledState.BorderRadius = 1;
+            this.btnOke.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnOke.OnDisabledState.BorderThickness = 1;
+            this.btnOke.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnOke.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnOke.OnDisabledState.IconLeftImage = null;
+            this.btnOke.OnDisabledState.IconRightImage = null;
+            this.btnOke.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnOke.onHoverState.BorderRadius = 1;
+            this.btnOke.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnOke.onHoverState.BorderThickness = 1;
+            this.btnOke.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnOke.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnOke.onHoverState.IconLeftImage = null;
+            this.btnOke.onHoverState.IconRightImage = null;
+            this.btnOke.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnOke.OnIdleState.BorderRadius = 1;
+            this.btnOke.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnOke.OnIdleState.BorderThickness = 1;
+            this.btnOke.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnOke.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnOke.OnIdleState.IconLeftImage = null;
+            this.btnOke.OnIdleState.IconRightImage = null;
+            this.btnOke.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnOke.OnPressedState.BorderRadius = 1;
+            this.btnOke.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnOke.OnPressedState.BorderThickness = 1;
+            this.btnOke.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnOke.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnOke.OnPressedState.IconLeftImage = null;
+            this.btnOke.OnPressedState.IconRightImage = null;
+            this.btnOke.Size = new System.Drawing.Size(156, 51);
+            this.btnOke.TabIndex = 22;
+            this.btnOke.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnOke.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnOke.TextMarginLeft = 0;
+            this.btnOke.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnOke.UseDefaultRadiusAndThickness = true;
+            this.btnOke.Click += new System.EventHandler(this.btnOke_Click);
+            // 
+            // lbTotalPrice
+            // 
+            this.lbTotalPrice.AutoSize = true;
+            this.lbTotalPrice.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalPrice.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lbTotalPrice.Location = new System.Drawing.Point(436, 485);
+            this.lbTotalPrice.Name = "lbTotalPrice";
+            this.lbTotalPrice.Size = new System.Drawing.Size(40, 28);
+            this.lbTotalPrice.TabIndex = 21;
+            this.lbTotalPrice.Text = "0$";
+            this.lbTotalPrice.Click += new System.EventHandler(this.lbTotalPrice_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(281, 485);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(144, 28);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Total Price :";
             // 
             // btnReturn
             // 
@@ -386,12 +505,13 @@ namespace GUI
             this.btnReturn.IdleFillColor = System.Drawing.Color.White;
             this.btnReturn.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnReturn.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnReturn.Location = new System.Drawing.Point(319, 139);
+            this.btnReturn.Location = new System.Drawing.Point(320, 139);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(5);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(136, 47);
+            this.btnReturn.Size = new System.Drawing.Size(138, 47);
             this.btnReturn.TabIndex = 19;
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnOrderService
             // 
@@ -513,11 +633,12 @@ namespace GUI
             this.tblOrder.Name = "tblOrder";
             this.tblOrder.ReadOnly = true;
             this.tblOrder.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.tblOrder.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.tblOrder.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tblOrder.Size = new System.Drawing.Size(542, 250);
             this.tblOrder.TabIndex = 0;
+            this.tblOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblOrder_CellClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -554,6 +675,8 @@ namespace GUI
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "fmService";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Service Manager";
@@ -604,5 +727,8 @@ namespace GUI
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbService;
+        private System.Windows.Forms.Label lbTotalPrice;
+        private System.Windows.Forms.Label label7;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnOke;
     }
 }
