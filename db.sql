@@ -48,8 +48,6 @@ create table service(
     primary key (serviceid));
 
 
-
-
 create table invoice(
     orderid number GENERATED ALWAYS AS IDENTITY primary key,
     bookingid number,
@@ -152,67 +150,4 @@ insert into room (roomname, type) VALUES ('A1.5','Normal');
 insert into room (roomname, type) VALUES ('A1.6','Vip');
 
 
-
-/*
---set serveroutput on;
---
---declare 
---    now date;
---begin
---    now := to_date(SYSTIMESTAMP,'DD-MM-YYYY MI:HH');
---    DBMS_OUTPUT.PUT_LINE(now);
---end;
-
-insert into customer(name,phone) values('Pham tien sy','012399');
-
-select * from service;
-
-delete room
-where roomid = 61;
-
-insert into booking(roomid, empid,customerid) values('1','1','1');
-
-insert into invoice(bookingid) values(1);
-
-update room
-set status = 'Already'
-where type = 'Normal';
-commit;
-insert into room(roomname, type) values('A1.8','Vip');
-select * from room;
-
-select * from customer order by customerid ASC;
-
-select * from orderservice o, service s where o.serviceid = s.serviceid;
-alter session set nls_date_format = 'dd/MM/yyyy hh24:mi:ss'
-
-insert into booking(roomid, empid, customerid, timecreated) values (1, 22, 1, to_date(','hh24:mi dd/mm/yyyy');
-
-select * from booking;
-
-update booking
-set  status = 'Done'
-where roomid = 2;
-
-alter table booking
-drop column timecreated ;
-
-
-delete booking
-where status = 'Done';
-
-select *
-from booking b, room r, employee e, customer c
-where b.roomid = r.roomid
-and b.empid = e.employeeid
-and b.customerid = c.customerid
-and b.status = 'Using' 
-order by bookingid ASC;
-
-select * from orderservice;
-
-commit;
-
-
-*/
-
+insert into invoice(bookingid, timeend, totalprice, createdby) values (11,'11:54 24/06/2021',5611910,1)

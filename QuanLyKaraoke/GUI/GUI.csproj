@@ -209,6 +209,12 @@
     <Compile Include="fmCheckOut.Designer.cs">
       <DependentUpon>fmCheckOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmInvoice.Designer.cs">
+      <DependentUpon>fmInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="fmService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fmCheckOut.resx">
       <DependentUpon>fmCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmInvoice.resx">
+      <DependentUpon>fmInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmService.resx">
       <DependentUpon>fmService.cs</DependentUpon>

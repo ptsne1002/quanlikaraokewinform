@@ -773,7 +773,7 @@ namespace DTO
         }
 
 
-        // Process Serivce with 
+        // Process Serivce with DB
 
         public string InsertOrderService(OrderService s)
         {
@@ -835,6 +835,160 @@ namespace DTO
             }
             return temp;
         }
+
+
+        //Process Invoice with DB
+        public string InsertInvoice(Invoice ins)
+        {
+            string rs = "";
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("insert into invoice(bookingid, timend, totalprice, createdby) values ({0},'{1}',{2},{3})",
+                                          ins.Booking.BookingId,DateTime.Now.ToString("HH:mm dd/MM/yyyy"), ins.TotalPrice, ins.CreatedBy);
+            OracleCommand cmd = new OracleCommand(query, conn);
+            try
+            {
+                conn.Open();
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    rs = "Create Invoice Successful";
+                }
+                else
+                {
+                    rs = "Sorry! Can't Created Invoice";
+                }
+            }
+            catch (Exception e)
+            {
+                rs = e.Message;
+            }
+            return rs;
+        }
+
+        public List<Invoice> GetTopInvoice(int num)
+        {
+            List<Invoice> temp = new List<Invoice>();
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("select * from invoice i, booking b, customer c, room r where i.bookingid = b.bookingid and c.customerid = b.customerid and r.roomid = b.roomid order by i.totalprice desc FETCH FIRST {0} ROWS ONLY", num);
+            OracleCommand cmd = new OracleCommand(query, conn);
+            OracleDataReader rd;
+            try
+            {
+                conn.Open();
+                rd = cmd.ExecuteReader();
+
+                if (rd.HasRows)
+                    while (rd.Read())
+                    {
+                        Invoice t = new Invoice();
+                        t.OrderId = rd.GetInt32(0);
+                        t.Booking.BookingId = rd.GetInt32(1);
+                        t.TotalPrice = rd.GetInt32(2);
+                        t.CreatedBy = rd.GetInt32(3);
+                        t.TimeEnd = rd.GetString(4);
+                        t.Booking.Room.RoomId = rd.GetInt32(6);
+                        t.Booking.Emp.EmployeeId = rd.GetInt32(7);
+                        t.Booking.Cus.CustomerId = rd.GetInt32(8);
+                        t.Booking.TimeStart = rd.GetString(10);
+                        t.Booking.Cus.CustomerName = rd.GetString(12);
+                        t.Booking.Cus.Phone = rd.GetString(13);
+                        t.Booking.Room.RoomId = rd.GetInt32(14);
+                        t.Booking.Room.RoomName = rd.GetString(15);
+                        t.Booking.Room.Type = rd.GetString(16);
+                        t.Booking.Room.PricePerHours = rd.GetInt32(17);
+                        temp.Add(t);
+                    }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return temp;
+        }
+        public List<Invoice> GetInvoiceByDay(string day)
+        {
+            List<Invoice> temp = new List<Invoice>();
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("select * from invoice i, booking b, customer c, room r where i.bookingid = b.bookingid and c.customerid = b.customerid and r.roomid = b.roomid and i.timend like '%{0}' order by i.totalprice desc", day);
+            OracleCommand cmd = new OracleCommand(query, conn);
+            OracleDataReader rd;
+            try
+            {
+                conn.Open();
+                rd = cmd.ExecuteReader();
+
+                if (rd.HasRows)
+                    while (rd.Read())
+                    {
+                        Invoice t = new Invoice();
+                        t.OrderId = rd.GetInt32(0);
+                        t.Booking.BookingId = rd.GetInt32(1);
+                        t.TotalPrice = rd.GetInt32(2);
+                        t.CreatedBy = rd.GetInt32(3);
+                        t.TimeEnd = rd.GetString(4);
+                        t.Booking.Room.RoomId = rd.GetInt32(6);
+                        t.Booking.Emp.EmployeeId = rd.GetInt32(7);
+                        t.Booking.Cus.CustomerId = rd.GetInt32(8);
+                        t.Booking.TimeStart = rd.GetString(10);
+                        t.Booking.Cus.CustomerName = rd.GetString(12);
+                        t.Booking.Cus.Phone = rd.GetString(13);
+                        t.Booking.Room.RoomId = rd.GetInt32(14);
+                        t.Booking.Room.RoomName = rd.GetString(15);
+                        t.Booking.Room.Type = rd.GetString(16);
+                        t.Booking.Room.PricePerHours = rd.GetInt32(17);
+                        temp.Add(t);
+                    }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return temp;
+        }
+        public List<Invoice> GetInvoiceByCusPhone(string phone)
+        {
+            List<Invoice> temp = new List<Invoice>();
+            OracleConnection conn = Connect.ConnecttoDB();
+            string query = string.Format("select * from invoice i, booking b, customer c, room r where i.bookingid = b.bookingid and c.customerid = b.customerid and r.roomid = b.roomid and c.phone = '{0}' order by i.totalprice desc", phone);
+            OracleCommand cmd = new OracleCommand(query, conn);
+            OracleDataReader rd;
+            try
+            {
+                conn.Open();
+                rd = cmd.ExecuteReader();
+
+                if (rd.HasRows)
+                    while (rd.Read())
+                    {
+                        Invoice t = new Invoice();
+                        t.OrderId = rd.GetInt32(0);
+                        t.Booking.BookingId = rd.GetInt32(1);
+                        t.TotalPrice = rd.GetInt32(2);
+                        t.CreatedBy = rd.GetInt32(3);
+                        t.TimeEnd = rd.GetString(4);
+                        t.Booking.Room.RoomId = rd.GetInt32(6);
+                        t.Booking.Emp.EmployeeId = rd.GetInt32(7);
+                        t.Booking.Cus.CustomerId = rd.GetInt32(8);
+                        t.Booking.TimeStart = rd.GetString(10);
+                        t.Booking.Cus.CustomerName = rd.GetString(12);
+                        t.Booking.Cus.Phone = rd.GetString(13);
+                        t.Booking.Room.RoomId = rd.GetInt32(14);
+                        t.Booking.Room.RoomName = rd.GetString(15);
+                        t.Booking.Room.Type = rd.GetString(16);
+                        t.Booking.Room.PricePerHours = rd.GetInt32(17);
+                        temp.Add(t);
+                    }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            return temp;
+        }
+
+
     }
 
 

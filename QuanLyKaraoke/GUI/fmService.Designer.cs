@@ -468,11 +468,11 @@ namespace GUI
             // lbTotalPrice
             // 
             this.lbTotalPrice.AutoSize = true;
-            this.lbTotalPrice.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalPrice.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalPrice.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lbTotalPrice.Location = new System.Drawing.Point(436, 485);
+            this.lbTotalPrice.Location = new System.Drawing.Point(431, 488);
             this.lbTotalPrice.Name = "lbTotalPrice";
-            this.lbTotalPrice.Size = new System.Drawing.Size(40, 28);
+            this.lbTotalPrice.Size = new System.Drawing.Size(38, 25);
             this.lbTotalPrice.TabIndex = 21;
             this.lbTotalPrice.Text = "0$";
             this.lbTotalPrice.Click += new System.EventHandler(this.lbTotalPrice_Click);

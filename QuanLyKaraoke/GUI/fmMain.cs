@@ -81,6 +81,7 @@ namespace GUI
         {
             fmService fmSer = new fmService();
             fmSer.ShowDialog();
+            fmRest();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -116,13 +117,15 @@ namespace GUI
 
         private void btnInvoice_Click(object sender, EventArgs e)
         {
-
+            fmInvoice fmInvoice = new fmInvoice();
+            fmInvoice.ShowDialog();
         }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            fmCheckOut fmCheckOut = new fmCheckOut();
+            fmCheckOut fmCheckOut = new fmCheckOut(currentEmp);
             fmCheckOut.ShowDialog();
+            fmRest();
         }
 
         private void btnEmp_Click(object sender, EventArgs e)
@@ -216,9 +219,7 @@ namespace GUI
                     listBooking.Add(book);
                     string rs = controllerBooking.InsertBooking(book);
                     MessageBox.Show(rs, "Notification");
-                    LoadDBRoom();
-                    LoadDBEmployee();
-                    LoadBooking();
+                    fmRest();
                     tblCustomer.Visible = false;
                 }
                 else
@@ -262,7 +263,12 @@ namespace GUI
             empIndex = tblEmp.CurrentCell.RowIndex;
         }
 
-       
+       private void fmRest()
+        {
+            LoadDBRoom();
+            LoadDBEmployee();
+            LoadBooking();
+        }
 
         private void txtPhone_KeyDown(object sender, KeyEventArgs e)
         {

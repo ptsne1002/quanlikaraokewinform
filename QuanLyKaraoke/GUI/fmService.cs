@@ -286,6 +286,15 @@ namespace GUI
                 controllerOS.InsertOrderService(os);
             }
             MessageBox.Show("Done", "Notification");
+            fmRest();
         }
+
+        private void fmRest()
+        {
+            tblOrder.Rows.Clear();
+            nbAmount.Value = 0;
+            lbTotalPrice.Text = "$0";
+        }
+
     }
 }

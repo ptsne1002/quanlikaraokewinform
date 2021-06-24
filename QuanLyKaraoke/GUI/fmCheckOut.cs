@@ -17,12 +17,16 @@ namespace GUI
     public partial class fmCheckOut : Form
     {
         private Booking_BUS controllerBooking = new Booking_BUS();
+        private Invoice_BUS controllerInvoice = new Invoice_BUS();
         private OrderService_BUS controllerOS = new OrderService_BUS();
         private double rmCharge;
         private List<Booking> lsBooking;
+        private double allPrice;
+        private Employee currentEmp;
         //private CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
-        public fmCheckOut()
+        public fmCheckOut(Employee c)
         {
+            currentEmp = c;
             InitializeComponent();
             LoadBooking();
         }
@@ -42,18 +46,43 @@ namespace GUI
             }
         }
 
+        private void fmReset()
+        {
+            txtCheckOut.Text = "";
+            txtNameCus.Text = "";
+            txtPH.Text = "";
+            txtRoomCharge.Text = "$0";
+            txtRoomName.Text = "";
+            txtRoomType.Text = "";
+            txtTimeBooking.Text = "";
+            txtTotalHour.Text = "";
+            lbAllMoney.Text = "$0";
+            lbPriceService.Text = "$0";
+            
+            LoadBooking();
+            tblSerVice.Rows.Clear();
+        }
 
         private void bunifuTileButton1_Click(object sender, EventArgs e)
         {
-            
+            Invoice ins = new Invoice();
+            int index = tblRoomBooking.CurrentCell.RowIndex;
+            ins.Booking.BookingId = lsBooking[index].BookingId;
+            ins.TimeEnd = DateTime.Now.ToString("HH:mm dd/MM/yyyy");
+            ins.TotalPrice = allPrice;
+            ins.CreatedBy = currentEmp.EmployeeId;
+            string rs = controllerInvoice.InsertInvoice(ins);
+            MessageBox.Show(rs, "Notification");
+            fmReset();    
         }
 
         private void LoadDBService(int bookingID)
         {
-            tblSerVice.Rows.Clear();
+            
             List<OrderService> lsOS = new List<OrderService>();
             lsOS = controllerOS.GetOSByBookingID(bookingID);
             lsBooking[tblRoomBooking.CurrentCell.RowIndex].LsOrder = lsOS;
+            tblSerVice.Rows.Clear();
             for (int i = 0; i < lsOS.Count; i++)
             {
                 DataGridViewRow newRow = new DataGridViewRow();
@@ -99,8 +128,8 @@ namespace GUI
                 totalPriceService += lsBooking[index].LsOrder[i].Amount * lsBooking[index].LsOrder[i].UnitPrice;
             }
             lbPriceService.Text = totalPriceService.ToString("C2");
-            double allPay = double.Parse(totalPriceService.ToString()) + rmCharge;
-            lbAllMoney.Text = (allPay).ToString("C2");
+            allPrice = double.Parse(totalPriceService.ToString()) + rmCharge;
+            lbAllMoney.Text = (allPrice).ToString("C2");
         }
 
         
