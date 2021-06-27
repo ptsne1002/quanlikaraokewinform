@@ -1,12 +1,14 @@
 ﻿using BUS;
 using DTO;
-
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,7 @@ namespace GUI
         private List<Booking> lsBooking;
         private double allPrice;
         private Employee currentEmp;
+        private bool stt = false;
         //private CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
         public fmCheckOut(Employee c)
         {
@@ -58,23 +61,63 @@ namespace GUI
             txtTotalHour.Text = "";
             lbAllMoney.Text = "$0";
             lbPriceService.Text = "$0";
-            
             LoadBooking();
             tblSerVice.Rows.Clear();
         }
 
         private void bunifuTileButton1_Click(object sender, EventArgs e)
         {
-            Invoice ins = new Invoice();
-            int index = tblRoomBooking.CurrentCell.RowIndex;
-            ins.Booking.BookingId = lsBooking[index].BookingId;
-            ins.TimeEnd = DateTime.Now.ToString("HH:mm dd/MM/yyyy");
-            ins.TotalPrice = allPrice;
-            ins.CreatedBy = currentEmp.EmployeeId;
-            string rs = controllerInvoice.InsertInvoice(ins);
-            MessageBox.Show(rs, "Notification");
-            fmReset();    
+            if(stt)
+            {
+                Invoice ins = new Invoice();
+                int index = tblRoomBooking.CurrentCell.RowIndex;
+                ins.Booking.BookingId = lsBooking[index].BookingId;
+                ins.TimeEnd = DateTime.Now.ToString("HH:mm dd/MM/yyyy");
+                ins.TotalPrice = allPrice;
+                ins.CreatedBy = currentEmp.EmployeeId;
+                string rs = controllerInvoice.InsertInvoice(ins);
+                MessageBox.Show(rs, "Notification");
+                PrintReport();
+                fmReset();
+            }
+            else
+            {
+                MessageBox.Show("You Must Choose One Room","NOTIFICATION");
+            }   
+            
+            
         }
+
+        private void PrintReport()
+        {
+            int index = tblRoomBooking.CurrentCell.RowIndex;
+            Document doc = new Document();
+            string day = txtCheckOut.Text.Substring(6).Replace('/','-');
+            string room = txtRoomName.Text.Replace('.', '_');
+            string folder = string.Format("E:/ReportOfKaraManager/[{2}]_[{0}]_[{1}].pdf", txtRoomName.Text, day,lsBooking[index].BookingId);
+            PdfWriter.GetInstance(doc, new FileStream(folder, FileMode.Create));
+            doc.Open();
+            string sv = "";
+            
+            for (int i  = 0; i < lsBooking[index].LsOrder.Count;i++)
+            {
+                sv += string.Format("\t\t {0}   *{1}  =  {2}\n", lsBooking[index].LsOrder[i].NameService, lsBooking[index].LsOrder[i].Amount, lsBooking[index].LsOrder[i].Total.ToString("C2"));
+            }
+            string nds = string.Format("__**__KARAOKE 3 BOY HANDSOME__**___\n\n" +
+                                     "Time Created : {0}\n" +
+                                     "Customer Name : {1}   Phone : {2}\n" +
+                                     "Room : {3}-{4} Price/Hour : {5}\n" +
+                                     "Time check in : {6} - Time check out : {7}\n" +
+                                     "Total Hour : {8} => Room Charge : {9}\n" +
+                                     "Service : \n" +
+                                     "{10}\n" +
+                                     "Total : {11}", txtCheckOut.Text, txtNameCus.Text, lsBooking[index].Cus.Phone,txtRoomName.Text,txtRoomType.Text,txtPH.Text,txtTimeBooking.Text,txtCheckOut.Text,txtTotalHour.Text,txtRoomCharge.Text,sv, lbAllMoney.Text);
+            Paragraph line1 = new Paragraph(nds);
+            doc.Add(line1);
+            doc.Close();
+
+        }
+
 
         private void LoadDBService(int bookingID)
         {
@@ -98,6 +141,7 @@ namespace GUI
 
         private void tblRoomBooking_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            stt = true;
             CultureInfo provider = CultureInfo.InvariantCulture;
             int index = tblRoomBooking.CurrentCell.RowIndex;
             txtNameCus.Text = lsBooking[index].Cus.CustomerName;
@@ -132,6 +176,9 @@ namespace GUI
             lbAllMoney.Text = (allPrice).ToString("C2");
         }
 
-        
+        private void bunifuTileButton1_Click_1(object sender, EventArgs e)
+        {
+            PrintReport();
+        }
     }
 }

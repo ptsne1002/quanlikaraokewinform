@@ -111,3 +111,6 @@ E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Deb
 E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Debug\GUI.fmCheckOut.resources
 E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Debug\GUI.fmService.resources
 E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\obj\Debug\GUI.fmInvoice.resources
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\bin\Debug\IronPdf.Assets.Rendering.Windows.dll
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\bin\Debug\itextsharp.dll
+E:\Phân Tích Thiết Kế HTTT\QuanLyKaraoke-Project\QuanLyKaraoke\GUI\bin\Debug\itextsharp.xml

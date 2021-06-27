@@ -8,7 +8,7 @@ namespace DTO
 {
     public class ConnectDB
     {
-        private string str_connect = "Data Source=localhost:1521/orcl;User Id=karaokemanager;Password=pts;";
+        private string str_connect = "Data Source=localhost:1521/orcl;User Id=karamanagerdb;Password=pts;";
         public OracleConnection ConnecttoDB()
         {
             OracleConnection conn = new OracleConnection(this.str_connect);

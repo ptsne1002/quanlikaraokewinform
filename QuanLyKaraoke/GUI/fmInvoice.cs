@@ -20,10 +20,13 @@ namespace GUI
         private List<Invoice> lsInvoiceByCus = new List<Invoice>();
         private List<Invoice> lsInvoiceByDay = new List<Invoice>();
         private OrderService_BUS controllerOS = new OrderService_BUS();
+        private List<Invoice> allInvoice = new List<Invoice>();
         private double rmCharge;
         public fmInvoice()
         {
             InitializeComponent();
+            allInvoice = controllerInvoice.GetAllInvoice();
+            AllIncome();
         }
 
         
@@ -197,15 +200,18 @@ namespace GUI
             for (int i = 0; i < lsInvoiceByCus.Count; i++)
             {
 
-                cbInPhone.Items.Add(lsInvoiceByDay[i].TimeEnd);
+                cbInPhone.Items.Add(lsInvoiceByCus[i].TimeEnd);
             }
+
+            
+
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             CultureInfo provider = CultureInfo.InvariantCulture;
             int index = cbInPhone.SelectedIndex;
-            txtNameCus.Text = lsInvoiceByCus[index].Booking.Cus.CustomerName;
+            txtNameCus.Text = lsInvoiceByCus[index].Booking.Cus.CustomerName; 
             txtRoomName.Text = lsInvoiceByCus[index].Booking.Room.RoomName;
             txtRoomType.Text = lsInvoiceByCus[index].Booking.Room.Type;
             txtPH.Text = lsInvoiceByCus[index].Booking.Room.PricePerHours.ToString("C2");
@@ -222,5 +228,28 @@ namespace GUI
             loadDBSerVice(3, index);
             CaculateTotalPriceService(3, index);
         }
+
+        private void btnSearchAll_Click(object sender, EventArgs e)
+        {
+            cbTopInvoice.Items.Clear();
+            int number = int.Parse(nbNum.Value.ToString());
+            lsTopInvoice = controllerInvoice.GetAllInvoice();
+            for (int i = 1; i < lsTopInvoice.Count + 1; i++)
+            {
+                string n = "Top " + i;
+                cbTopInvoice.Items.Add(n);
+            }
+        }
+
+        private void AllIncome()
+        {
+            double income = 0;
+            for (int i = 0; i < allInvoice.Count; i++)
+            {
+                income += allInvoice[i].TotalPrice;
+            }
+            lbAllIncome.Text = income.ToString("C2");
+        }
+
     }
 }

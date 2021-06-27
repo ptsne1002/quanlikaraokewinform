@@ -33,7 +33,14 @@ namespace BUS
             List<Invoice> ls = new List<Invoice>();
             ls = model.GetInvoiceByCusPhone(phone);
             return ls;
+        }
+        public List<Invoice> GetAllInvoice()
+        {
+            List<Invoice> ls = new List<Invoice>();
+            ls = model.GetAllInvoice();
+            return ls;
         } 
+
 
 
     }

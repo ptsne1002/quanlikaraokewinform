@@ -79,6 +79,9 @@ namespace GUI
             this.cbInPhone = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.btnSearchAll = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lbAllIncome = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblSerVice)).BeginInit();
@@ -94,7 +97,7 @@ namespace GUI
             this.lbAllMoney.BackColor = System.Drawing.Color.Transparent;
             this.lbAllMoney.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAllMoney.ForeColor = System.Drawing.Color.Crimson;
-            this.lbAllMoney.Location = new System.Drawing.Point(759, 587);
+            this.lbAllMoney.Location = new System.Drawing.Point(759, 619);
             this.lbAllMoney.Name = "lbAllMoney";
             this.lbAllMoney.Size = new System.Drawing.Size(36, 25);
             this.lbAllMoney.TabIndex = 10;
@@ -106,7 +109,7 @@ namespace GUI
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label10.Location = new System.Drawing.Point(518, 587);
+            this.label10.Location = new System.Drawing.Point(518, 619);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(237, 25);
             this.label10.TabIndex = 9;
@@ -118,7 +121,7 @@ namespace GUI
             this.lbPriceService.BackColor = System.Drawing.Color.Transparent;
             this.lbPriceService.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPriceService.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbPriceService.Location = new System.Drawing.Point(798, 541);
+            this.lbPriceService.Location = new System.Drawing.Point(798, 578);
             this.lbPriceService.Name = "lbPriceService";
             this.lbPriceService.Size = new System.Drawing.Size(27, 19);
             this.lbPriceService.TabIndex = 8;
@@ -130,7 +133,7 @@ namespace GUI
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label8.Location = new System.Drawing.Point(615, 541);
+            this.label8.Location = new System.Drawing.Point(615, 578);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(155, 19);
             this.label8.TabIndex = 7;
@@ -160,7 +163,7 @@ namespace GUI
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.groupBox2.Location = new System.Drawing.Point(299, 12);
+            this.groupBox2.Location = new System.Drawing.Point(299, 49);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(615, 520);
             this.groupBox2.TabIndex = 6;
@@ -405,6 +408,7 @@ namespace GUI
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.btnSearchAll);
             this.groupBox1.Controls.Add(this.btnSearchTop);
             this.groupBox1.Controls.Add(this.cbTopInvoice);
             this.groupBox1.Controls.Add(this.label13);
@@ -412,7 +416,7 @@ namespace GUI
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.groupBox1.Location = new System.Drawing.Point(7, 41);
+            this.groupBox1.Location = new System.Drawing.Point(7, 49);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(286, 174);
             this.groupBox1.TabIndex = 11;
@@ -437,10 +441,10 @@ namespace GUI
             this.btnSearchTop.IdleFillColor = System.Drawing.Color.White;
             this.btnSearchTop.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnSearchTop.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnSearchTop.Location = new System.Drawing.Point(47, 120);
+            this.btnSearchTop.Location = new System.Drawing.Point(15, 123);
             this.btnSearchTop.Margin = new System.Windows.Forms.Padding(5);
             this.btnSearchTop.Name = "btnSearchTop";
-            this.btnSearchTop.Size = new System.Drawing.Size(181, 41);
+            this.btnSearchTop.Size = new System.Drawing.Size(121, 39);
             this.btnSearchTop.TabIndex = 27;
             this.btnSearchTop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSearchTop.Click += new System.EventHandler(this.btnSearchTop_Click);
@@ -494,7 +498,7 @@ namespace GUI
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.groupBox4.Location = new System.Drawing.Point(7, 236);
+            this.groupBox4.Location = new System.Drawing.Point(7, 252);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(286, 176);
             this.groupBox4.TabIndex = 12;
@@ -593,7 +597,7 @@ namespace GUI
             this.groupBox5.Controls.Add(this.label17);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.groupBox5.Location = new System.Drawing.Point(7, 453);
+            this.groupBox5.Location = new System.Drawing.Point(7, 465);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(286, 179);
             this.groupBox5.TabIndex = 13;
@@ -665,12 +669,64 @@ namespace GUI
             this.label17.TabIndex = 23;
             this.label17.Text = "Cus Phone";
             // 
+            // btnSearchAll
+            // 
+            this.btnSearchAll.ActiveBorderThickness = 1;
+            this.btnSearchAll.ActiveCornerRadius = 20;
+            this.btnSearchAll.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnSearchAll.ActiveForecolor = System.Drawing.Color.White;
+            this.btnSearchAll.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnSearchAll.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearchAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearchAll.BackgroundImage")));
+            this.btnSearchAll.ButtonText = "Search All";
+            this.btnSearchAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchAll.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchAll.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnSearchAll.IdleBorderThickness = 1;
+            this.btnSearchAll.IdleCornerRadius = 20;
+            this.btnSearchAll.IdleFillColor = System.Drawing.Color.White;
+            this.btnSearchAll.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btnSearchAll.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnSearchAll.Location = new System.Drawing.Point(146, 123);
+            this.btnSearchAll.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSearchAll.Name = "btnSearchAll";
+            this.btnSearchAll.Size = new System.Drawing.Size(121, 39);
+            this.btnSearchAll.TabIndex = 28;
+            this.btnSearchAll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSearchAll.Click += new System.EventHandler(this.btnSearchAll_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label18.Location = new System.Drawing.Point(570, 15);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(134, 25);
+            this.label18.TabIndex = 14;
+            this.label18.Text = "All Income :";
+            // 
+            // lbAllIncome
+            // 
+            this.lbAllIncome.AutoSize = true;
+            this.lbAllIncome.BackColor = System.Drawing.Color.Transparent;
+            this.lbAllIncome.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAllIncome.ForeColor = System.Drawing.Color.Crimson;
+            this.lbAllIncome.Location = new System.Drawing.Point(710, 15);
+            this.lbAllIncome.Name = "lbAllIncome";
+            this.lbAllIncome.Size = new System.Drawing.Size(36, 25);
+            this.lbAllIncome.TabIndex = 15;
+            this.lbAllIncome.Text = "$0";
+            // 
             // fmInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(924, 660);
+            this.Controls.Add(this.lbAllIncome);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
@@ -750,5 +806,8 @@ namespace GUI
         private Bunifu.Framework.UI.BunifuThinButton2 btnSearchTop;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSearchDay;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSeachPhone;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnSearchAll;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lbAllIncome;
     }
 }
